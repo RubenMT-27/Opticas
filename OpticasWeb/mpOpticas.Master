@@ -1,0 +1,78 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="mpOpticas.Master.cs" Inherits="OpticasWeb.Site1" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
+    <title>Opticas Gran Visión</title>
+
+    <%-- ==================== CSS/JS COMPARTIDOS ================== --%>
+    <link href="css/cssIndex.css" rel="stylesheet" />
+    <link href="css/bootstrap/5.2.1/bootstrap.min.css" rel="stylesheet" />
+    <%--<script src="js/bootstrap/5.2.1/bootstrap.min.js"></script>--%>
+    <script src="js/bootstrap/5.2.1/bootstrap.bundle.min.js"></script>
+
+    <asp:ContentPlaceHolder ID="cphCss" runat="server">
+    </asp:ContentPlaceHolder>
+
+    <asp:ContentPlaceHolder ID="cphJs" runat="server">
+    </asp:ContentPlaceHolder>
+
+</head>
+<body>
+    <form id="form1" runat="server">
+        <header class="container-fluid">
+            <nav class="navbar navbar-expand-md navbar-dark bg-opacity-50 border-3 border-bottom border-primary">
+                <div class="container-fluid">
+                    <a href="#" class="navbar-brand">
+                        <img class="Logo" src="Imagenes/Formularios/Logo.png" /></a>
+                    <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#MenuNavegacion">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div id="MenuNavegacion" class="collapse navbar-collapse">
+                        <ul class="navbar-nav ms-3">
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" href="#"><strong>Favoritos</strong></a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle text-dark" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"><strong>Catalogos</strong></a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+                                    <li><a class="dropdown-item" href="#">Clientes</a></li>
+                                </ul>
+                            </li>
+                            <%-- <li class="nav-item">
+                                <a class="nav-link" href="#">Catalogo</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Ayuda</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                                    Opciones de Soporte
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-light bg-opacity-100">
+                                    <li><a class="dropdown-item" href="#">Manuales</a></li>
+                                </ul>
+                            </li>--%>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+        </header>
+
+        <div class="container-fluid">
+            <asp:ContentPlaceHolder ID="cphPrincipal" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+
+        <footer class="position-fixed bottom-0 w-100 bg-light" style="height: 50px;">
+        </footer>
+    </form>
+    <asp:ContentPlaceHolder ID="cphScripts" runat="server">
+    </asp:ContentPlaceHolder>
+</body>
+</html>

@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32929.385
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpticasWeb", "OpticasWeb\OpticasWeb.csproj", "{481C5992-4B05-4627-A20A-334A45A3B844}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpticasWebApi", "OpticasWebApi\OpticasWebApi.csproj", "{D5C9AB77-6DA0-402F-9EA6-914DE7D305E0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Librerias", "Librerias", "{A7EE9C3C-82CF-4B7C-960A-7FB9F0CECE21}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{481C5992-4B05-4627-A20A-334A45A3B844}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{481C5992-4B05-4627-A20A-334A45A3B844}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{481C5992-4B05-4627-A20A-334A45A3B844}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{481C5992-4B05-4627-A20A-334A45A3B844}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D5C9AB77-6DA0-402F-9EA6-914DE7D305E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5C9AB77-6DA0-402F-9EA6-914DE7D305E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D5C9AB77-6DA0-402F-9EA6-914DE7D305E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D5C9AB77-6DA0-402F-9EA6-914DE7D305E0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {363B6411-5A2D-4618-AC18-BBCEEBAF773E}
+	EndGlobalSection
+EndGlobal

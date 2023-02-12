@@ -1,0 +1,11 @@
+﻿body {
+    background: url(../Imagenes/Formularios/Index-bg.jpg) no-repeat center center fixed;
+    background-size: contain cover;
+}
+
+.Logo {
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    margin: 0;
+}
