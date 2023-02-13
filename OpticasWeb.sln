@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpticasWebApi", "OpticasWeb
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Librerias", "Librerias", "{A7EE9C3C-82CF-4B7C-960A-7FB9F0CECE21}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "libEmpleadosUsuarios", "libEmpleadosUsuarios\libEmpleadosUsuarios.csproj", "{71251B01-D5CF-4169-9BD8-E3D7B13FAD88}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,9 +25,16 @@ Global
 		{D5C9AB77-6DA0-402F-9EA6-914DE7D305E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D5C9AB77-6DA0-402F-9EA6-914DE7D305E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D5C9AB77-6DA0-402F-9EA6-914DE7D305E0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{71251B01-D5CF-4169-9BD8-E3D7B13FAD88}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{71251B01-D5CF-4169-9BD8-E3D7B13FAD88}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{71251B01-D5CF-4169-9BD8-E3D7B13FAD88}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{71251B01-D5CF-4169-9BD8-E3D7B13FAD88}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{71251B01-D5CF-4169-9BD8-E3D7B13FAD88} = {A7EE9C3C-82CF-4B7C-960A-7FB9F0CECE21}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {363B6411-5A2D-4618-AC18-BBCEEBAF773E}

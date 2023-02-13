@@ -28,6 +28,7 @@
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap/5.2.1/bootstrap.min.js"></script>
     <script src="js/jsLogin.js"></script>
+    <script src="js/jsGeneral.js"></script>
 
     <asp:ContentPlaceHolder ID="cphScripts" runat="server">
     </asp:ContentPlaceHolder>

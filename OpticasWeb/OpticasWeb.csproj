@@ -87,6 +87,7 @@
     <Content Include="css\cssIndex.css" />
     <Content Include="imagenes\Formularios\Login-bg.jpg" />
     <Content Include="js\jquery-3.6.3.min.js" />
+    <Content Include="js\jsGeneral.js" />
     <Content Include="js\jsLogin.js" />
     <Content Include="js\popper.min.js" />
     <Content Include="Login.aspx" />
@@ -182,7 +183,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>57546</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>https://localhost:44379/</IISUrl>
+          <IISUrl>http://localhost:2270/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
