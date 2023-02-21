@@ -8,3 +8,13 @@ C:\Users\52555\source\repos\OpticasWeb\libEmpleadosUsuarios\obj\Debug\libEmplead
 C:\Users\52555\source\repos\OpticasWeb\libEmpleadosUsuarios\obj\Debug\libEmpleadosUsuarios.csproj.CopyComplete
 C:\Users\52555\source\repos\OpticasWeb\libEmpleadosUsuarios\obj\Debug\libEmpleadosUsuarios.dll
 C:\Users\52555\source\repos\OpticasWeb\libEmpleadosUsuarios\obj\Debug\libEmpleadosUsuarios.pdb
+C:\Sistemas\Optica_GIT\Opticas\libEmpleadosUsuarios\bin\Debug\libEmpleadosUsuarios.dll
+C:\Sistemas\Optica_GIT\Opticas\libEmpleadosUsuarios\bin\Debug\libEmpleadosUsuarios.pdb
+C:\Sistemas\Optica_GIT\Opticas\libEmpleadosUsuarios\bin\Debug\Conexion.dll
+C:\Sistemas\Optica_GIT\Opticas\libEmpleadosUsuarios\bin\Debug\Newtonsoft.Json.dll
+C:\Sistemas\Optica_GIT\Opticas\libEmpleadosUsuarios\bin\Debug\Newtonsoft.Json.xml
+C:\Sistemas\Optica_GIT\Opticas\libEmpleadosUsuarios\obj\Debug\libEmpleadosUsuarios.csproj.AssemblyReference.cache
+C:\Sistemas\Optica_GIT\Opticas\libEmpleadosUsuarios\obj\Debug\libEmpleadosUsuarios.csproj.CoreCompileInputs.cache
+C:\Sistemas\Optica_GIT\Opticas\libEmpleadosUsuarios\obj\Debug\libEmpleadosUsuarios.csproj.CopyComplete
+C:\Sistemas\Optica_GIT\Opticas\libEmpleadosUsuarios\obj\Debug\libEmpleadosUsuarios.dll
+C:\Sistemas\Optica_GIT\Opticas\libEmpleadosUsuarios\obj\Debug\libEmpleadosUsuarios.pdb

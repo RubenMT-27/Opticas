@@ -89,6 +89,8 @@
     <Content Include="js\jquery-3.6.3.min.js" />
     <Content Include="js\jsGeneral.js" />
     <Content Include="js\jsLogin.js" />
+    <Content Include="js\plugins\FileSaver\FileSaver.js" />
+    <Content Include="js\plugins\FileSaver\FileSaver.min.js" />
     <Content Include="js\popper.min.js" />
     <Content Include="Login.aspx" />
     <Content Include="imagenes\Formularios\Index-bg.jpg" />
@@ -157,6 +159,7 @@
     <Content Include="js\bootstrap\5.2.1\bootstrap.esm.min.js.map" />
     <Content Include="js\bootstrap\5.2.1\bootstrap.js.map" />
     <Content Include="js\bootstrap\5.2.1\bootstrap.min.js.map" />
+    <Content Include="js\plugins\FileSaver\FileSaver.min.js.map" />
     <None Include="packages.config" />
     <Content Include="mpOpticas.Master" />
     <Content Include="mpLogin.Master" />

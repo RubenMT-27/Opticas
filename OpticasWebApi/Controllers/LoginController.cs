@@ -10,7 +10,7 @@ using System.Web.Script.Serialization;
 
 namespace OpticasWebApi.Controllers
 {
-    [Authorize]
+    [AllowAnonymous]
     [RoutePrefix("api/InicioSesion")]
     public class LoginController : ApiController
     {
