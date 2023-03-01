@@ -11669,3 +11669,8 @@ textarea.form-control {
                 background: #fbceb5;
                 color: #fff;
             }
+
+#txtContraseña::-ms-reveal,
+#txtContraseña::-ms-clear {
+    display: none;
+}

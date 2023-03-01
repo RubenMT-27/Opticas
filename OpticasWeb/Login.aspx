@@ -1,6 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/mpLogin.Master" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="OpticasWeb.Login" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="cphCss" runat="server">
+    <link href="css/Kendo/Kendo-2023-R1/styles/kendo.common.min.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="cphJs" runat="server">
 </asp:Content>
@@ -25,7 +26,7 @@
                                 <span toggle="#txtContraseña" class="fa fa-fw fa-eye field-icon toggle-password"></span>
                             </div>
                             <div class="form-group">
-                                <button type="submit" id="btnIniciarSesion" class="form-control btn btn-primary submit px-3" onclick="IniciarSesion();">Iniciar Sesión</button>
+                                <button type="submit" id="btnIniciarSesion" class="form-control btn btn-primary submit px-3">Iniciar Sesión</button>
                             </div>
                             <div class="form-group d-md-flex">
                                 <div class="w-50">
@@ -40,7 +41,7 @@
                                 </div>
                             </div>
                         </form>
-                       <%--  <p class="w-100 text-center">&mdash; Or Sign In With &mdash;</p>
+                        <%--  <p class="w-100 text-center">&mdash; Or Sign In With &mdash;</p>
                         <div class="social d-flex text-center">
                             <a href="#" class="px-2 py-2 mr-md-1 rounded"><span class="ion-logo-facebook mr-2"></span>Facebook</a>
                             <a href="#" class="px-2 py-2 ml-md-1 rounded"><span class="ion-logo-twitter mr-2"></span>Twitter</a>
@@ -52,4 +53,6 @@
     </section>
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="cphScripts" runat="server">
+    <script src="js/Kendo/Kendo-2023-R1/js/kendo.all.min.js"></script>
+    <script src="js/Kendo/Kendo-2023-R1/js/messages/kendo.messages.es-MX.min.js"></script>
 </asp:Content>

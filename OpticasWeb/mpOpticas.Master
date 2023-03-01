@@ -7,71 +7,93 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
     <title>Opticas Gran Visión</title>
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <%-- ==================== CSS/JS COMPARTIDOS ================== --%>
-    <link href="css/cssIndex.css" rel="stylesheet" />
+    <!-- CSS -->
     <link href="css/bootstrap/5.2.1/bootstrap.min.css" rel="stylesheet" />
-    <%--<script src="js/bootstrap/5.2.1/bootstrap.min.js"></script>--%>
-    <script src="js/bootstrap/5.2.1/bootstrap.bundle.min.js"></script>
+    <link href="css/plugins/sweetalert2.min.css" rel="stylesheet" />
+    <link href="css/cssIndex.css" rel="stylesheet" />
 
-    <asp:ContentPlaceHolder ID="cphCss" runat="server">
-    </asp:ContentPlaceHolder>
+    <link href="css/plugins/animate/app.min.css" rel="stylesheet" />
+    <link href="css/plugins/ionicons/css/ionicons.min.css" rel="stylesheet" />
+    <link href="css/plugins/introjs.min.css" rel="stylesheet" />
 
-    <asp:ContentPlaceHolder ID="cphJs" runat="server">
-    </asp:ContentPlaceHolder>
+    <%--<link href="Plugins_Ext/assets/css/apple/app.min.css" rel="stylesheet" />--%>
+    <%--<link href="Plugins_Ext/assets/plugins/ionicons/css/ionicons.min.css" rel="stylesheet" />--%>
+    <%--<link href="Plugins_Ext/assets/plugins/intro.js/minified/introjs.min.css" rel="stylesheet" />--%>
+    <!-- JS -->
+
+    <asp:ContentPlaceHolder ID="cphCss" runat="server"></asp:ContentPlaceHolder>
+
+    <asp:ContentPlaceHolder ID="cphJs" runat="server"></asp:ContentPlaceHolder>
 
 </head>
-<body>
+<body class="img js-fullheight" style="background-image: url(Imagenes/Formularios/Login-bg.jpg);">
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Opticas Gran Visión</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#MenuPrincipal" aria-controls="MenuPrincipal" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="MenuPrincipal">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0" id="TiposModulosFill">
+                </ul>
+
+                <form class="form-inline my-2 my-lg-0" id="DatosUsuarioFill">
+                </form>
+            </div>
+        </div>
+    </nav>
+
     <form id="form1" runat="server">
-        <header class="container-fluid">
-            <nav class="navbar navbar-expand-md navbar-dark bg-opacity-50 border-3 border-bottom border-primary">
-                <div class="container-fluid">
-                    <a href="#" class="navbar-brand">
-                        <img class="Logo" src="Imagenes/Formularios/Logo.png" /></a>
-                    <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#MenuNavegacion">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-
-                    <div id="MenuNavegacion" class="collapse navbar-collapse">
-                        <ul class="navbar-nav ms-3">
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" href="#"><strong>Favoritos</strong></a>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle text-dark" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"><strong>Catalogos</strong></a>
-                                <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
-                                    <li><a class="dropdown-item" href="#">Clientes</a></li>
-                                </ul>
-                            </li>
-                            <%-- <li class="nav-item">
-                                <a class="nav-link" href="#">Catalogo</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Ayuda</a>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
-                                    Opciones de Soporte
-                                </a>
-                                <ul class="dropdown-menu dropdown-menu-light bg-opacity-100">
-                                    <li><a class="dropdown-item" href="#">Manuales</a></li>
-                                </ul>
-                            </li>--%>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
-
-        </header>
-
         <div class="container-fluid">
             <asp:ContentPlaceHolder ID="cphPrincipal" runat="server">
             </asp:ContentPlaceHolder>
         </div>
-
-        <footer class="position-fixed bottom-0 w-100 bg-light" style="height: 50px;">
-        </footer>
     </form>
+
+    <!-- SCRIPTS -->
+    <%--    <script src="Plugins_Ext/assets/js/app.min.js"></script>
+    <script src="Plugins_Ext/assets/plugins/intro.js/minified/intro.min.js"></script>--%>
+
+    <script src="js/plugins/app.min.js"></script>
+    <script src="js/plugins/intro.min.js"></script>
+    <script src="js/plugins/jquery-3.6.3.min.js"></script>
+    <script src="js/plugins/popper.min.js"></script>
+    <script src="js/plugins/sweetalert2.all.min.js"></script>
+    <script src="js/plugins/jquery.tmpl.min.js"></script>
+    <script src="js/bootstrap/5.2.1/bootstrap.min.js"></script>
+    <script src="js/jsGeneral.js"></script>
+    <script src="js/jsIndex.js"></script>
+
+    <script id="tmplTiposModulos" type="text/x-jquery-tmpl">
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="${Nav}" role="button" data-bs-toggle="dropdown" aria-expanded="false">${ModuloTipo}</a>
+            <ul class="dropdown-menu" aria-labelledby="${Nav}" id="SubMenuFill${IdModuloTipo}">
+            </ul>
+        </li>
+    </script>
+
+    <script id="tmplDatosUsuarios" type="text/x-jquery-tmpl">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0" id="">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navUsuarios" role="button" data-bs-toggle="dropdown" aria-expanded="false">${Empleado}</a>
+                <ul class="dropdown-menu" aria-labelledby="navUsuarios">
+                    <li class="m-2">
+                        <b>Usuario:</b> <cite>${EmpleadoUsuario}</cite><br />
+                        <b>Sucursal:</b> <cite>${Sucursal}</cite><br />
+                        <b>Puesto:</b> <cite>${Puesto}</cite>
+                    </li>
+                    <li class="dropdown-divider"></li>
+                    <li class="dropdown-item" style="text-align: center;"><a class="dropdown-item" id="" href="#">Cerrar Sesión <span class="fa fa-sign-out" style="padding-left: 20px;"></span></a></li>
+                </ul>
+            </li>
+        </ul>
+    </script>
+
     <asp:ContentPlaceHolder ID="cphScripts" runat="server">
     </asp:ContentPlaceHolder>
 </body>

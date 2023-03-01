@@ -12,23 +12,26 @@
 
     <!-- CSS -->
     <link href="css/bootstrap/5.2.1/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/plugins/sweetalert2.min.css" rel="stylesheet" />
     <link href="css/cssLogin.css" rel="stylesheet" />
     <!-- JS -->
 
     <asp:ContentPlaceHolder ID="cphCss" runat="server"></asp:ContentPlaceHolder>
 
     <asp:ContentPlaceHolder ID="cphJs" runat="server"></asp:ContentPlaceHolder>
+
 </head>
 <body class="img js-fullheight" style="background-image: url(Imagenes/Formularios/Login-bg.jpg);">
     <asp:ContentPlaceHolder ID="cphPrincipal" runat="server">
     </asp:ContentPlaceHolder>
 
     <!-- SCRIPTS -->
-    <script src="js/jquery-3.6.3.min.js"></script>
-    <script src="js/popper.min.js"></script>
+    <script src="js/plugins/jquery-3.6.3.min.js"></script>
+    <script src="js/plugins/popper.min.js"></script>
+    <script src="js/plugins/sweetalert2.all.min.js"></script>
     <script src="js/bootstrap/5.2.1/bootstrap.min.js"></script>
-    <script src="js/jsLogin.js"></script>
     <script src="js/jsGeneral.js"></script>
+    <script src="js/jsLogin.js"></script>
 
     <asp:ContentPlaceHolder ID="cphScripts" runat="server">
     </asp:ContentPlaceHolder>
