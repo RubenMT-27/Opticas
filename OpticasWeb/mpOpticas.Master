@@ -7,8 +7,8 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
     <title>Opticas Gran Visión</title>
-    <link href="css/plugins/apple/app.min.css" rel="stylesheet" />
-   <%--  <link href="css/plugins/animate/app.min.css" rel="stylesheet" />--%>
+
+    <link href="css/plugins/animate/app.min.css" rel="stylesheet" />
     <link href="css/plugins/ionicons/css/ionicons.min.css" rel="stylesheet" />
     <link href="css/plugins/introjs.min.css" rel="stylesheet" />
 
@@ -19,12 +19,6 @@
     <link href="css/bootstrap/5.2.1/bootstrap.min.css" rel="stylesheet" />
     <link href="css/plugins/sweetalert2.min.css" rel="stylesheet" />
     <link href="css/cssIndex.css" rel="stylesheet" />
-
-   
-
-    <%--<link href="Plugins_Ext/assets/css/apple/app.min.css" rel="stylesheet" />--%>
-    <%--<link href="Plugins_Ext/assets/plugins/ionicons/css/ionicons.min.css" rel="stylesheet" />--%>
-    <%--<link href="Plugins_Ext/assets/plugins/intro.js/minified/introjs.min.css" rel="stylesheet" />--%>
     <!-- JS -->
 
     <asp:ContentPlaceHolder ID="cphCss" runat="server"></asp:ContentPlaceHolder>
@@ -57,12 +51,12 @@
             </asp:ContentPlaceHolder>
         </div>
     </form>
-    
+
     <!-- SCRIPTS -->
     <%--    <script src="Plugins_Ext/assets/js/app.min.js"></script>
     <script src="Plugins_Ext/assets/plugins/intro.js/minified/intro.min.js"></script>--%>
     <script src="js/Kendo/Kendo-2023-R1/js/jquery.min.js"></script>
- 
+
     <script src="js/plugins/intro.min.js"></script>
     <script src="js/plugins/jquery-3.6.3.min.js"></script>
     <script src="js/plugins/popper.min.js"></script>
@@ -91,7 +85,7 @@
                         <b>Puesto:</b> <cite>${Puesto}</cite>
                     </li>
                     <li class="dropdown-divider"></li>
-                    <li class="dropdown-item" style="text-align: center;"><a class="dropdown-item" id="" href="#">Cerrar Sesión <span class="fa fa-sign-out" style="padding-left: 20px;"></span></a></li>
+                    <li class="dropdown-item CerrarSesion" style="text-align: center;"><a class="dropdown-item" id="btnCerrarSesion" href="#">Cerrar Sesión <span class="fa fa-sign-out" style="padding-left: 20px;"></span></a></li>
                 </ul>
             </li>
         </ul>

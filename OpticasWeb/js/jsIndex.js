@@ -13,7 +13,20 @@
     var oModulosTipos = new libModulosTipos();
     oModulosTipos.GetListModulosTipos();
 
+    $(document).on('click', '.CerrarSesion', function () {
+        CerrarSesion();
+    });
+
 });
+
+async function CerrarSesion() {
+    var bCerrarSesion = await CrearAlertaConfirm("¿Esta Seguro de Cerrar Sesión?", "Cerrar Sesión", 'question');
+
+    if (bCerrarSesion == true) {
+        sessionStorage.clear();
+        window.location.href = "login.aspx";
+    }
+}
 
 function libModulosTipos() {
     var UrlWebGeneral = "http://localhost:44543/api/";
@@ -106,7 +119,7 @@ function libEmpleadosUsuarios() {
             complete: function () { },
             success: function (result) {
                 if (!result.bError) {
-                    BindHtml(result.ListEmpleadosUsuarios, "#DatosUsuarioFill", "#tmplDatosUsuarios")                
+                    BindHtml(result.ListEmpleadosUsuarios, "#DatosUsuarioFill", "#tmplDatosUsuarios")
                 } else {
 
                 }

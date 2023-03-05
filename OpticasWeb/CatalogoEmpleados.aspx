@@ -15,7 +15,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="cphJs" runat="server">
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="cphPrincipal" runat="server">
-    <h1 class="page-header">Catálogo Empleados <small>Gran Visión</small></h1>
+    <h1 class="page-header p-1">Catálogo Empleados <small>Gran Visión</small></h1>
 
     <div class="row row-space-30">
         <div class="col-lg-12 ui-sortable">

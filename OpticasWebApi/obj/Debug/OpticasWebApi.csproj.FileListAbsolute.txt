@@ -223,6 +223,8 @@ C:\Sistemas\Optica_GIT\Opticas\OpticasWebApi\obj\Debug\OpticasWebApi.pdb
 C:\Sistemas\Optica_GIT\Opticas\OpticasWebApi\bin\System.Web.Cors.dll
 C:\Sistemas\Optica_GIT\Opticas\OpticasWebApi\bin\System.Web.Http.Cors.dll
 C:\Sistemas\Optica_GIT\Opticas\OpticasWebApi\bin\System.Web.Http.Cors.xml
+C:\Users\52555\source\repos\Opticas\OpticasWebApi\obj\Debug\OpticasWebApi.csproj.AssemblyReference.cache
+C:\Users\52555\source\repos\Opticas\OpticasWebApi\obj\Debug\OpticasWebApi.csproj.CoreCompileInputs.cache
 C:\Users\52555\source\repos\Opticas\OpticasWebApi\bin\OpticasWebApi.dll.config
 C:\Users\52555\source\repos\Opticas\OpticasWebApi\bin\OpticasWebApi.dll
 C:\Users\52555\source\repos\Opticas\OpticasWebApi\bin\OpticasWebApi.pdb
@@ -280,6 +282,8 @@ C:\Users\52555\source\repos\Opticas\OpticasWebApi\bin\libEmpleados.dll
 C:\Users\52555\source\repos\Opticas\OpticasWebApi\bin\libEmpleadosUsuarios.dll
 C:\Users\52555\source\repos\Opticas\OpticasWebApi\bin\libModulos.dll
 C:\Users\52555\source\repos\Opticas\OpticasWebApi\bin\libModulosTipos.dll
+C:\Users\52555\source\repos\Opticas\OpticasWebApi\bin\libProductosSubTipos.dll
+C:\Users\52555\source\repos\Opticas\OpticasWebApi\bin\libProductosTipos.dll
 C:\Users\52555\source\repos\Opticas\OpticasWebApi\bin\libPuestos.dll
 C:\Users\52555\source\repos\Opticas\OpticasWebApi\bin\libSucursales.dll
 C:\Users\52555\source\repos\Opticas\OpticasWebApi\bin\Microsoft.Bcl.AsyncInterfaces.dll
@@ -308,6 +312,8 @@ C:\Users\52555\source\repos\Opticas\OpticasWebApi\bin\libEmpleadosUsuarios.pdb
 C:\Users\52555\source\repos\Opticas\OpticasWebApi\bin\libEmpleados.pdb
 C:\Users\52555\source\repos\Opticas\OpticasWebApi\bin\libModulosTipos.pdb
 C:\Users\52555\source\repos\Opticas\OpticasWebApi\bin\libModulos.pdb
+C:\Users\52555\source\repos\Opticas\OpticasWebApi\bin\libProductosSubTipos.pdb
+C:\Users\52555\source\repos\Opticas\OpticasWebApi\bin\libProductosTipos.pdb
 C:\Users\52555\source\repos\Opticas\OpticasWebApi\bin\libPuestos.pdb
 C:\Users\52555\source\repos\Opticas\OpticasWebApi\bin\libSucursales.pdb
 C:\Users\52555\source\repos\Opticas\OpticasWebApi\bin\Microsoft.Bcl.AsyncInterfaces.xml
@@ -333,8 +339,8 @@ C:\Users\52555\source\repos\Opticas\OpticasWebApi\bin\Microsoft.CodeDom.Provider
 C:\Users\52555\source\repos\Opticas\OpticasWebApi\bin\es\System.Net.Http.Formatting.resources.dll
 C:\Users\52555\source\repos\Opticas\OpticasWebApi\bin\es\System.Web.Http.resources.dll
 C:\Users\52555\source\repos\Opticas\OpticasWebApi\bin\es\System.Web.Http.WebHost.resources.dll
-C:\Users\52555\source\repos\Opticas\OpticasWebApi\obj\Debug\OpticasWebApi.csproj.AssemblyReference.cache
-C:\Users\52555\source\repos\Opticas\OpticasWebApi\obj\Debug\OpticasWebApi.csproj.CoreCompileInputs.cache
 C:\Users\52555\source\repos\Opticas\OpticasWebApi\obj\Debug\OpticasWebApi.csproj.CopyComplete
 C:\Users\52555\source\repos\Opticas\OpticasWebApi\obj\Debug\OpticasWebApi.dll
 C:\Users\52555\source\repos\Opticas\OpticasWebApi\obj\Debug\OpticasWebApi.pdb
+C:\Users\52555\source\repos\Opticas\OpticasWebApi\bin\libProductosGrupos.dll
+C:\Users\52555\source\repos\Opticas\OpticasWebApi\bin\libProductosGrupos.pdb

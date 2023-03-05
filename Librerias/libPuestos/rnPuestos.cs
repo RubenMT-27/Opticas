@@ -8,33 +8,16 @@ using Newtonsoft.Json;
 namespace AnceSystem.libPuestos
 {
 
-   public class rnPuestos : adPuestos
-{
-      public DataTable dt { get; set; }
+    public class rnPuestos : adPuestos
+    {
+        public DataTable dt { get; set; }
 
         public JArray ListResult { get; set; }
 
         public rnPuestos() : base("cnOpticas")
-       {
-       }
+        {
+        }
 
-      public void InsertarDatos()
-      { 
-         Bandera = "";
-         Insertar();
-       }
-
-      public void ActualizarDatos()
-      { 
-         Bandera = "";
-         Actualizar();
-       }
-
-      public void EliminarDatos()
-      { 
-         Bandera = "";
-         Eliminar();
-       }
 
         public void ListarPuestos()
         {
@@ -49,6 +32,36 @@ namespace AnceSystem.libPuestos
             }
         }
 
+        public void ListarPuestosGrid()
+        {
+            Bandera = "s2";
+            dt = Listar();
+
+            if (!objError.bError)
+            {
+                string jsonList;
+                jsonList = JsonConvert.SerializeObject(dt);
+                ListResult = JArray.Parse(jsonList);
+            }
+        }
+
+        public void GuardarPuestoGrid()
+        {
+            Bandera = "i1";
+            Insertar();
+        }
+
+        public void ActualizarPuestoGrid()
+        {
+            Bandera = "u1";
+            Actualizar();
+        }
+
+        public void EliminarPuestoGrid()
+        {
+            Bandera = "u2";
+            Actualizar();
+        }
     }
 
 

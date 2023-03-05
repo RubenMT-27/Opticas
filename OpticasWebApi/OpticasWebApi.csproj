@@ -143,6 +143,9 @@
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\ModulosController.cs" />
     <Compile Include="Controllers\ModulosTiposController.cs" />
+    <Compile Include="Controllers\ProductosSubTiposController.cs" />
+    <Compile Include="Controllers\ProductosGruposController.cs" />
+    <Compile Include="Controllers\ProductosTiposController.cs" />
     <Compile Include="Controllers\PuestosController.cs" />
     <Compile Include="Controllers\SucursalesController.cs" />
     <Compile Include="Controllers\TokenGenerador.cs" />
@@ -153,7 +156,14 @@
     <Compile Include="Models\Request\EmpleadosRequest.cs" />
     <Compile Include="Models\Request\LoginRequest.cs" />
     <Compile Include="Models\Request\ModulosNivelesRequest.cs" />
+    <Compile Include="Models\Request\ProductosGruposRequest.cs" />
+    <Compile Include="Models\Request\ProductosSubTiposRequest.cs" />
+    <Compile Include="Models\Request\ProductosTiposRequest.cs" />
     <Compile Include="Models\Request\PuestosRequest.cs" />
+    <Compile Include="Models\Result\ProductosGruposResult.cs" />
+    <Compile Include="Models\Result\ProductosSubTiposResult.cs" />
+    <Compile Include="Models\Result\ProductosTiposResult.cs" />
+    <Compile Include="Models\Result\PuestosResult.cs" />
     <Compile Include="Models\Request\SucursalesRequest.cs" />
     <Compile Include="Models\Result\EmpleadosResult.cs" />
     <Compile Include="Models\Result\EmpleadosUsuariosResult.cs" />
@@ -190,6 +200,18 @@
     <ProjectReference Include="..\Librerias\libModulos\libModulos.csproj">
       <Project>{8a2134e0-5a11-4a0b-be42-2387bfaf91d7}</Project>
       <Name>libModulos</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Librerias\libProductosGrupos\libProductosGrupos.csproj">
+      <Project>{8ae24064-86ca-48a3-911e-a52d2e012939}</Project>
+      <Name>libProductosGrupos</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Librerias\libProductosSubTipos\libProductosSubTipos.csproj">
+      <Project>{53AA7B24-B8A1-45AA-A662-5CA207492606}</Project>
+      <Name>libProductosSubTipos</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Librerias\libProductosTipos\libProductosTipos.csproj">
+      <Project>{0ed3085d-b8bc-4639-b6b6-4d0d2872e380}</Project>
+      <Name>libProductosTipos</Name>
     </ProjectReference>
     <ProjectReference Include="..\Librerias\libPuestos\libPuestos.csproj">
       <Project>{f774fbb3-d9e7-4943-a640-84af0324af38}</Project>

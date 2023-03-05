@@ -1,0 +1,10 @@
+C:\Users\52555\source\repos\Opticas\Librerias\libProductosGrupos\bin\Debug\libProductosGrupos.dll
+C:\Users\52555\source\repos\Opticas\Librerias\libProductosGrupos\bin\Debug\libProductosGrupos.pdb
+C:\Users\52555\source\repos\Opticas\Librerias\libProductosGrupos\bin\Debug\Conexion.dll
+C:\Users\52555\source\repos\Opticas\Librerias\libProductosGrupos\bin\Debug\Newtonsoft.Json.dll
+C:\Users\52555\source\repos\Opticas\Librerias\libProductosGrupos\bin\Debug\Newtonsoft.Json.xml
+C:\Users\52555\source\repos\Opticas\Librerias\libProductosGrupos\obj\Debug\libProductosGrupos.csproj.AssemblyReference.cache
+C:\Users\52555\source\repos\Opticas\Librerias\libProductosGrupos\obj\Debug\libProductosGrupos.csproj.CoreCompileInputs.cache
+C:\Users\52555\source\repos\Opticas\Librerias\libProductosGrupos\obj\Debug\libProductosGrupos.csproj.CopyComplete
+C:\Users\52555\source\repos\Opticas\Librerias\libProductosGrupos\obj\Debug\libProductosGrupos.dll
+C:\Users\52555\source\repos\Opticas\Librerias\libProductosGrupos\obj\Debug\libProductosGrupos.pdb

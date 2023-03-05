@@ -1,0 +1,19 @@
+﻿body {
+    overflow-x: hidden;
+}
+
+#kdGridTiposSubProductos {
+    height: 100%;
+}
+
+#kdGridTiposProductos {
+    height: 100%;
+}
+
+#kdGridPuestos {
+    height: 100%;
+}
+
+#kdGridGruposProductos {
+    height: 100%;
+}

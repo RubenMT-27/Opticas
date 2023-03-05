@@ -85,6 +85,7 @@
     <Content Include="css\bootstrap\5.2.1\bootstrap.rtl.css" />
     <Content Include="css\bootstrap\5.2.1\bootstrap.rtl.min.css" />
     <Content Include="css\cssCatalogoEmpleados.css" />
+    <Content Include="css\cssGenerales.css" />
     <Content Include="css\cssLogin.css" />
     <Content Include="css\cssIndex.css" />
     <Content Include="css\Kendo\Kendo-2023-R1\styles\Black\editor.png" />
@@ -452,6 +453,14 @@
     <Content Include="css\plugins\ionicons\css\ionicons.min.css" />
     <Content Include="css\plugins\ionicons\fonts\ionicons.svg" />
     <Content Include="css\plugins\sweetalert2.min.css" />
+    <Content Include="js\jsProductosGrupos.js" />
+    <Content Include="ProductosGrupos.aspx" />
+    <Content Include="js\jsProductosSubTipos.js" />
+    <Content Include="ProductosSubTipos.aspx" />
+    <Content Include="js\jsProductosTipos.js" />
+    <Content Include="ProductosTipos.aspx" />
+    <Content Include="js\jsPuestos.js" />
+    <Content Include="Puestos.aspx" />
     <Content Include="imagenes\Formularios\Alerta-bg.png" />
     <Content Include="imagenes\Formularios\Login-bg.jpg" />
     <Content Include="js\jsCatalogoEmpleados.js" />
@@ -1628,6 +1637,34 @@
     </Compile>
     <Compile Include="CatalogoEmpleados.aspx.designer.cs">
       <DependentUpon>CatalogoEmpleados.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProductosGrupos.aspx.cs">
+      <DependentUpon>ProductosGrupos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProductosGrupos.aspx.designer.cs">
+      <DependentUpon>ProductosGrupos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProductosSubTipos.aspx.cs">
+      <DependentUpon>ProductosSubTipos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProductosSubTipos.aspx.designer.cs">
+      <DependentUpon>ProductosSubTipos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProductosTipos.aspx.cs">
+      <DependentUpon>ProductosTipos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProductosTipos.aspx.designer.cs">
+      <DependentUpon>ProductosTipos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Puestos.aspx.cs">
+      <DependentUpon>Puestos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Puestos.aspx.designer.cs">
+      <DependentUpon>Puestos.aspx</DependentUpon>
     </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
