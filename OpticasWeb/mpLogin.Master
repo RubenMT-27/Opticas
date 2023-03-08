@@ -21,7 +21,7 @@
     <asp:ContentPlaceHolder ID="cphJs" runat="server"></asp:ContentPlaceHolder>
 
 </head>
-<body class="img js-fullheight" style="background-image: url(Imagenes/Formularios/Login-bg.jpg);">
+<body  style="background-image: url(Imagenes/Formularios/trans2.jpg);">
     <asp:ContentPlaceHolder ID="cphPrincipal" runat="server">
     </asp:ContentPlaceHolder>
 

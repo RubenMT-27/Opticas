@@ -26,11 +26,14 @@
     <asp:ContentPlaceHolder ID="cphJs" runat="server"></asp:ContentPlaceHolder>
 
 </head>
-<body class="img js-fullheight" style="background-image: url(Imagenes/Formularios/Login-bg.jpg);">
+<body class="img js-fullheight" style="background-image: url(Imagenes/Formularios/Index-bg.jpg);">
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Opticas Gran Visión</a>
+            <a class="navbar-brand" href="Index.aspx"><span class="navbar-logo">
+							<img src="Imagenes/Formularios/gv4.PNG" class="brand-ance" style="height:50px; width:200px" />
+						</span>
+                        <b style="color:black" ></b></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#MenuPrincipal" aria-controls="MenuPrincipal" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>

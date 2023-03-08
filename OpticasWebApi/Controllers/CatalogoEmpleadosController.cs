@@ -105,6 +105,96 @@ namespace OpticasWebApi.Controllers
             return oResult;
         }
 
+
+        [HttpPost]
+        [Route("ActualizarEmpleado")]
+        public entResultListMuestras ActualizarEmpleadoo([FromBody] CatalogoEmpleadosRequest oEmpleados)
+        {
+            //entInventariosSolicitudes oDatos;
+            //entEmpleados eDatosSesion2;
+            entResultListMuestras oResult = new entResultListMuestras();
+
+            //eDatosSesion2 = (new JavaScriptSerializer()).Deserialize<entEmpleados>(sparam);
+            //oDatos = (new JavaScriptSerializer()).Deserialize<entInventariosSolicitudes>(sparam);
+            oResult.bError = true;
+            try
+            {
+                using (rnEmpleados oSolicitudes = new rnEmpleados())
+                {
+                    oSolicitudes.Nombre = oEmpleados.Nombre;
+                    oSolicitudes.ApellidoPaterno = oEmpleados.ApellidoPaterno;
+                    oSolicitudes.ApellidoMaterno = oEmpleados.ApellidoMaterno;
+                    oSolicitudes.CorreoElectronico = oEmpleados.CorreoElectronico;
+                    oSolicitudes.NumeroTelefono = oEmpleados.NumeroTelefono;
+                    oSolicitudes.IdSucursal = oEmpleados.IdSucursal;
+                    oSolicitudes.IdPuesto = oEmpleados.IdPuesto;
+                    oSolicitudes.Genero = oEmpleados.Genero;
+                    oSolicitudes.FechaNacimiento = oEmpleados.FechaNacimiento;
+                    oSolicitudes.FechaIngreso = oEmpleados.FechaIngreso;
+                    oSolicitudes.IdEmpleado = oEmpleados.IdEmpleado;
+                    oSolicitudes.ActualizarEmpleado();
+
+                    if (!oSolicitudes.objError.bError)
+                    {
+
+                    }
+                    else
+                    {
+                        throw oSolicitudes.objError.uException;
+                    }
+                }
+                oResult.bError = false;
+            }
+            catch (Exception ex)
+            {
+                oResult.bError = true;
+                oResult.Msg = "¡Se genero un error interno al momento de guardar un nuevo empleado, favor de verificar!";
+                oResult.Msg = ex.Message;
+            }
+            return oResult;
+        }
+
+
+        [HttpPost]
+        [Route("EliminarEmpleado")]
+        public entResultListMuestras EliminarEmpleadoo([FromBody] CatalogoEmpleadosRequest oEmpleados)
+        {
+            //entInventariosSolicitudes oDatos;
+            //entEmpleados eDatosSesion2;
+            entResultListMuestras oResult = new entResultListMuestras();
+
+            //eDatosSesion2 = (new JavaScriptSerializer()).Deserialize<entEmpleados>(sparam);
+            //oDatos = (new JavaScriptSerializer()).Deserialize<entInventariosSolicitudes>(sparam);
+            oResult.bError = true;
+            try
+            {
+                using (rnEmpleados oSolicitudes = new rnEmpleados())
+                {
+                   
+                    oSolicitudes.IdEmpleado = oEmpleados.IdEmpleado;
+                    oSolicitudes.EliminarEmpleado();
+
+                    if (!oSolicitudes.objError.bError)
+                    {
+
+                    }
+                    else
+                    {
+                        throw oSolicitudes.objError.uException;
+                    }
+                }
+                oResult.bError = false;
+            }
+            catch (Exception ex)
+            {
+                oResult.bError = true;
+                oResult.Msg = "¡Se genero un error interno al momento de eliminar un nuevo empleado, favor de verificar!";
+                oResult.Msg = ex.Message;
+            }
+            return oResult;
+        }
+
+
         //[HttpGet]
         //[Route("GetListSucursales")]
         //public entResultListSucursales GetListSucursaless([FromUri] string sparam)

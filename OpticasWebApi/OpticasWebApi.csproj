@@ -138,11 +138,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\AdministracionNivelesModulosController.cs" />
+    <Compile Include="Controllers\CatalogoClientesController.cs" />
     <Compile Include="Controllers\CatalogoEmpleadosController.cs" />
     <Compile Include="Controllers\EmpleadosUsuariosController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\ModulosController.cs" />
     <Compile Include="Controllers\ModulosTiposController.cs" />
+    <Compile Include="Controllers\NivelUsuarioController.cs" />
     <Compile Include="Controllers\ProductosSubTiposController.cs" />
     <Compile Include="Controllers\ProductosGruposController.cs" />
     <Compile Include="Controllers\ProductosTiposController.cs" />
@@ -153,13 +156,18 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Request\ClientesRequest.cs" />
     <Compile Include="Models\Request\EmpleadosRequest.cs" />
     <Compile Include="Models\Request\LoginRequest.cs" />
     <Compile Include="Models\Request\ModulosNivelesRequest.cs" />
+    <Compile Include="Models\Request\NivelUsuarioRequest.cs" />
     <Compile Include="Models\Request\ProductosGruposRequest.cs" />
     <Compile Include="Models\Request\ProductosSubTiposRequest.cs" />
     <Compile Include="Models\Request\ProductosTiposRequest.cs" />
     <Compile Include="Models\Request\PuestosRequest.cs" />
+    <Compile Include="Models\Result\ClientesResult.cs" />
+    <Compile Include="Models\Result\ModulosNiveles.cs" />
+    <Compile Include="Models\Result\NivelUsuarioResult.cs" />
     <Compile Include="Models\Result\ProductosGruposResult.cs" />
     <Compile Include="Models\Result\ProductosSubTiposResult.cs" />
     <Compile Include="Models\Result\ProductosTiposResult.cs" />
@@ -185,6 +193,10 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Librerias\libClientes\libClientes.csproj">
+      <Project>{8d02910e-0a39-4196-935b-54a2dbac2151}</Project>
+      <Name>libClientes</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Librerias\libEmpleadosUsuarios\libEmpleadosUsuarios.csproj">
       <Project>{71251b01-d5cf-4169-9bd8-e3d7b13fad88}</Project>
       <Name>libEmpleadosUsuarios</Name>
@@ -193,6 +205,10 @@
       <Project>{63dae301-86e2-49e6-b98e-218d64e2fdfe}</Project>
       <Name>libEmpleados</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Librerias\libModulosNiveles\libModulosNiveles.csproj">
+      <Project>{ea430219-2c24-4c05-9710-c6a17a737e05}</Project>
+      <Name>libModulosNiveles</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Librerias\libModulosTipos\libModulosTipos.csproj">
       <Project>{13fe5fd3-ed93-4a64-a180-619720711009}</Project>
       <Name>libModulosTipos</Name>
@@ -200,6 +216,10 @@
     <ProjectReference Include="..\Librerias\libModulos\libModulos.csproj">
       <Project>{8a2134e0-5a11-4a0b-be42-2387bfaf91d7}</Project>
       <Name>libModulos</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Librerias\libNivelesUsuarios\libNivelesUsuarios.csproj">
+      <Project>{54b3441f-c19c-4552-bdac-2fc8596463da}</Project>
+      <Name>libNivelesUsuarios</Name>
     </ProjectReference>
     <ProjectReference Include="..\Librerias\libProductosGrupos\libProductosGrupos.csproj">
       <Project>{8ae24064-86ca-48a3-911e-a52d2e012939}</Project>

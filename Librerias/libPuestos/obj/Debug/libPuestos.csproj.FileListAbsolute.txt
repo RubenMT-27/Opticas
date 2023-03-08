@@ -17,3 +17,13 @@ C:\Users\52555\source\repos\Opticas\Librerias\libPuestos\obj\Debug\libPuestos.cs
 C:\Users\52555\source\repos\Opticas\Librerias\libPuestos\obj\Debug\libPuestos.csproj.CopyComplete
 C:\Users\52555\source\repos\Opticas\Librerias\libPuestos\obj\Debug\libPuestos.dll
 C:\Users\52555\source\repos\Opticas\Librerias\libPuestos\obj\Debug\libPuestos.pdb
+C:\Sistemas\Optica_GIT\4\Opticas\Librerias\libPuestos\bin\Debug\libPuestos.dll
+C:\Sistemas\Optica_GIT\4\Opticas\Librerias\libPuestos\bin\Debug\libPuestos.pdb
+C:\Sistemas\Optica_GIT\4\Opticas\Librerias\libPuestos\bin\Debug\Conexion.dll
+C:\Sistemas\Optica_GIT\4\Opticas\Librerias\libPuestos\bin\Debug\Newtonsoft.Json.dll
+C:\Sistemas\Optica_GIT\4\Opticas\Librerias\libPuestos\bin\Debug\Newtonsoft.Json.xml
+C:\Sistemas\Optica_GIT\4\Opticas\Librerias\libPuestos\obj\Debug\libPuestos.csproj.AssemblyReference.cache
+C:\Sistemas\Optica_GIT\4\Opticas\Librerias\libPuestos\obj\Debug\libPuestos.csproj.CoreCompileInputs.cache
+C:\Sistemas\Optica_GIT\4\Opticas\Librerias\libPuestos\obj\Debug\libPuestos.csproj.CopyComplete
+C:\Sistemas\Optica_GIT\4\Opticas\Librerias\libPuestos\obj\Debug\libPuestos.dll
+C:\Sistemas\Optica_GIT\4\Opticas\Librerias\libPuestos\obj\Debug\libPuestos.pdb

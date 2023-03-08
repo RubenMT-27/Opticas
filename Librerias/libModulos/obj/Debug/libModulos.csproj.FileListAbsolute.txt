@@ -17,3 +17,12 @@ C:\Users\52555\source\repos\Opticas\Librerias\libModulos\obj\Debug\libModulos.cs
 C:\Users\52555\source\repos\Opticas\Librerias\libModulos\obj\Debug\libModulos.csproj.CopyComplete
 C:\Users\52555\source\repos\Opticas\Librerias\libModulos\obj\Debug\libModulos.dll
 C:\Users\52555\source\repos\Opticas\Librerias\libModulos\obj\Debug\libModulos.pdb
+C:\Sistemas\Optica_GIT\4\Opticas\Librerias\libModulos\bin\Debug\libModulos.dll
+C:\Sistemas\Optica_GIT\4\Opticas\Librerias\libModulos\bin\Debug\libModulos.pdb
+C:\Sistemas\Optica_GIT\4\Opticas\Librerias\libModulos\bin\Debug\Newtonsoft.Json.dll
+C:\Sistemas\Optica_GIT\4\Opticas\Librerias\libModulos\bin\Debug\Newtonsoft.Json.xml
+C:\Sistemas\Optica_GIT\4\Opticas\Librerias\libModulos\obj\Debug\libModulos.csproj.AssemblyReference.cache
+C:\Sistemas\Optica_GIT\4\Opticas\Librerias\libModulos\obj\Debug\libModulos.csproj.CoreCompileInputs.cache
+C:\Sistemas\Optica_GIT\4\Opticas\Librerias\libModulos\obj\Debug\libModulos.csproj.CopyComplete
+C:\Sistemas\Optica_GIT\4\Opticas\Librerias\libModulos\obj\Debug\libModulos.dll
+C:\Sistemas\Optica_GIT\4\Opticas\Librerias\libModulos\obj\Debug\libModulos.pdb

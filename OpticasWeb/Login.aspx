@@ -10,12 +10,13 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-md-6 text-center mb-5">
-                    <h2 class="heading-section">Inicio de Sesión</h2>
+                    
                 </div>
             </div>
             <div class="row justify-content-center">
                 <div class="col-md-7 col-lg-5">
                     <div class="login-wrap p-0">
+                        <h2 class="heading-section mb-4 text-center">Inicio de Sesión</h2>
                         <h3 class="mb-4 text-center">Opticas Gran Visión</h3>
                         <form action="#" class="signin-form">
                             <div class="form-group">

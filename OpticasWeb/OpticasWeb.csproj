@@ -67,6 +67,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AdministracionNiveles.aspx" />
+    <Content Include="AdministracionNivelesEmpleados.aspx" />
+    <Content Include="AdministracionNivelesModulos.aspx" />
+    <Content Include="CatalogoClientes.aspx" />
     <Content Include="CatalogoEmpleados.aspx" />
     <Content Include="css\bootstrap\5.2.1\bootstrap-grid.css" />
     <Content Include="css\bootstrap\5.2.1\bootstrap-grid.min.css" />
@@ -84,6 +88,10 @@
     <Content Include="css\bootstrap\5.2.1\bootstrap.min.css" />
     <Content Include="css\bootstrap\5.2.1\bootstrap.rtl.css" />
     <Content Include="css\bootstrap\5.2.1\bootstrap.rtl.min.css" />
+    <Content Include="css\cssAdministracionNivelesEmpleados.css" />
+    <Content Include="css\cssAdministracionNivelesModulos.css" />
+    <Content Include="css\cssAdministracionNivelUsuario.css" />
+    <Content Include="css\cssCatalogoClientes.css" />
     <Content Include="css\cssCatalogoEmpleados.css" />
     <Content Include="css\cssGenerales.css" />
     <Content Include="css\cssLogin.css" />
@@ -453,6 +461,15 @@
     <Content Include="css\plugins\ionicons\css\ionicons.min.css" />
     <Content Include="css\plugins\ionicons\fonts\ionicons.svg" />
     <Content Include="css\plugins\sweetalert2.min.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="imagenes\Formularios\gv4.png" />
+    <Content Include="imagenes\Formularios\Inicio_GV.png" />
+    <Content Include="imagenes\Formularios\Login-bg.jpg" />
+    <Content Include="imagenes\Formularios\trans2.jpg" />
+    <Content Include="js\jsAdministracionNivelesEmpleados.js" />
+    <Content Include="js\jsAdministracionNivelesModulos.js" />
+    <Content Include="js\jsAdministracionNivelUsuario.js" />
+    <Content Include="js\jsCatalogoClientes.js" />
     <Content Include="js\jsProductosGrupos.js" />
     <Content Include="ProductosGrupos.aspx" />
     <Content Include="js\jsProductosSubTipos.js" />
@@ -462,7 +479,7 @@
     <Content Include="js\jsPuestos.js" />
     <Content Include="Puestos.aspx" />
     <Content Include="imagenes\Formularios\Alerta-bg.png" />
-    <Content Include="imagenes\Formularios\Login-bg.jpg" />
+    <Content Include="imagenes\Formularios\Login-bg2.jpg" />
     <Content Include="js\jsCatalogoEmpleados.js" />
     <Content Include="js\Kendo\Kendo-2023-R1\js\angular.min.js" />
     <Content Include="js\Kendo\Kendo-2023-R1\js\cultures\kendo.culture.aa-DJ.min.js" />
@@ -1631,6 +1648,34 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdministracionNiveles.aspx.cs">
+      <DependentUpon>AdministracionNiveles.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdministracionNiveles.aspx.designer.cs">
+      <DependentUpon>AdministracionNiveles.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdministracionNivelesEmpleados.aspx.cs">
+      <DependentUpon>AdministracionNivelesEmpleados.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdministracionNivelesEmpleados.aspx.designer.cs">
+      <DependentUpon>AdministracionNivelesEmpleados.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdministracionNivelesModulos.aspx.cs">
+      <DependentUpon>AdministracionNivelesModulos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdministracionNivelesModulos.aspx.designer.cs">
+      <DependentUpon>AdministracionNivelesModulos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CatalogoClientes.aspx.cs">
+      <DependentUpon>CatalogoClientes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CatalogoClientes.aspx.designer.cs">
+      <DependentUpon>CatalogoClientes.aspx</DependentUpon>
+    </Compile>
     <Compile Include="CatalogoEmpleados.aspx.cs">
       <DependentUpon>CatalogoEmpleados.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

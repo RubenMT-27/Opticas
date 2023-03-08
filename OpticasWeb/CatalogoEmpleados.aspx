@@ -15,7 +15,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="cphJs" runat="server">
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="cphPrincipal" runat="server">
-    <h1 class="page-header p-1">Catálogo Empleados <small>Gran Visión</small></h1>
+     <h1 class="page-header p-1 text-white">Catálogo Empleados<small class="text-white"> Gran Visión</small></h1>
 
     <div class="row row-space-30">
         <div class="col-lg-12 ui-sortable">
@@ -29,12 +29,7 @@
 
                         Empleados
                     </h4>
-                    <div class="panel-heading-btn">
-                        <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-default" data-click="panel-expand"><i class="fa fa-expand"></i></a>
-                        <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-success" data-click="panel-reload"><i class="fa fa-redo"></i></a>
-                        <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
-                        <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-danger" data-click="panel-remove"><i class="fa fa-times"></i></a>
-                    </div>
+                   
                 </div>
 
                 <div class="panel-body p-t-10">
@@ -101,15 +96,13 @@
                                 <span class="k-invalid-msg" data-for="kdDpFechaIngreso"></span>
                             </div>
 
-                            <div class="col-4">
-                                <input class="w-100" id="kdDpFechaBaja" name="kdDpFechaBaja" />
-                            </div>
-
+                          
 
                         </div>
 
                         <div class="row justify-content-end align-items-center pt-2 window-footer">
                             <button id="kdBtnGuardar">Guardar</button>
+                            <button id="kdBtnActualizar">Actualizar</button>
                         </div>
 
                     </div>

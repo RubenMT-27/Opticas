@@ -24,7 +24,19 @@ namespace AnceSystem.libEmpleados
          Insertar();
        }
 
-      public void ListarEmpleados()
+      public void ActualizarEmpleado()
+      { 
+         Bandera = "u1";
+         Actualizar();
+       }
+
+        public void EliminarEmpleado()
+        {
+            Bandera = "u2";
+            Actualizar();
+        }
+
+        public void ListarEmpleados()
       { 
          Bandera = "s1";
          dt = Listar();
