@@ -18,3 +18,13 @@ C:\Sistemas\Optica_GIT\4\Opticas\Librerias\libClientes\obj\Debug\libClientes.csp
 C:\Sistemas\Optica_GIT\4\Opticas\Librerias\libClientes\obj\Debug\libClientes.csproj.CopyComplete
 C:\Sistemas\Optica_GIT\4\Opticas\Librerias\libClientes\obj\Debug\libClientes.dll
 C:\Sistemas\Optica_GIT\4\Opticas\Librerias\libClientes\obj\Debug\libClientes.pdb
+C:\Users\52555\source\repos\Opticas\Librerias\libClientes\bin\Debug\libClientes.dll
+C:\Users\52555\source\repos\Opticas\Librerias\libClientes\bin\Debug\libClientes.pdb
+C:\Users\52555\source\repos\Opticas\Librerias\libClientes\bin\Debug\Conexion.dll
+C:\Users\52555\source\repos\Opticas\Librerias\libClientes\bin\Debug\Newtonsoft.Json.dll
+C:\Users\52555\source\repos\Opticas\Librerias\libClientes\bin\Debug\Newtonsoft.Json.xml
+C:\Users\52555\source\repos\Opticas\Librerias\libClientes\obj\Debug\libClientes.csproj.AssemblyReference.cache
+C:\Users\52555\source\repos\Opticas\Librerias\libClientes\obj\Debug\libClientes.csproj.CoreCompileInputs.cache
+C:\Users\52555\source\repos\Opticas\Librerias\libClientes\obj\Debug\libClientes.csproj.CopyComplete
+C:\Users\52555\source\repos\Opticas\Librerias\libClientes\obj\Debug\libClientes.dll
+C:\Users\52555\source\repos\Opticas\Librerias\libClientes\obj\Debug\libClientes.pdb

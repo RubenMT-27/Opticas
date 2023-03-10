@@ -23,7 +23,7 @@
             }
         },
         error: function (e) {
-            CrearAlerta('¡Se genero un error al momento de obtener los datos de las tipos de productos!', "Error", "Error");
+            CrearAlerta('¡Se genero un error al momento de obtener los datos de los Tipos de Productos!', "Error", "Error");
         }
     });
 
@@ -125,7 +125,7 @@ async function EditarRegistro() {
             $("#txtDescripcion").data("kendoTextArea").value(selectedItem.Descripcion);
             $("#txtDescripcion").data("kendoTextArea").floatingLabel.refresh();
         } else {
-            CrearAlerta("¡Debe seleccionar un tipo de producto para modificar!", "Selección Tipo Producto", "warning")
+            CrearAlerta("¡Debe seleccionar un Tipo de Producto para modificar!", "Selección Tipo Producto", "warning")
         }
     }
 }
@@ -198,7 +198,7 @@ async function Eliminar() {
             oProductosTipos.IdProductoTipo = selectedItem.IdProductoTipo;
             oProductosTipos.EliminarProductosTiposGrid();
         } else {
-            CrearAlerta("¡Debe seleccionar un tipo de producto para eliminar!", "Selección Tipo Producto", "warning")
+            CrearAlerta("¡Debe seleccionar un Tipo de Producto para eliminar!", "Selección Tipo Producto", "warning")
         }
     }
 }

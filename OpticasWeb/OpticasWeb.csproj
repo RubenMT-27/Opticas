@@ -454,6 +454,37 @@
     <Content Include="css\Kendo\Kendo-2023-R1\styles\Uniform\sprite_kpi.png" />
     <Content Include="css\Kendo\Kendo-2023-R1\styles\Uniform\sprite_kpi_2x.png" />
     <Content Include="css\plugins\animate\app.min.css" />
+    <Content Include="css\plugins\animate\images\coming-soon.jpg" />
+    <Content Include="css\plugins\animate\images\cover-pattern.png" />
+    <Content Include="css\plugins\animate\images\cover-sidebar-user.jpg" />
+    <Content Include="css\plugins\animate\images\cover-sidebar.jpg" />
+    <Content Include="css\plugins\animate\images\error-page-pattern.png" />
+    <Content Include="css\plugins\animate\images\profile-cover.jpg" />
+    <Content Include="css\plugins\animate\images\transparent\black-0.1.png" />
+    <Content Include="css\plugins\animate\images\transparent\black-0.2.png" />
+    <Content Include="css\plugins\animate\images\transparent\black-0.3.png" />
+    <Content Include="css\plugins\animate\images\transparent\black-0.4.png" />
+    <Content Include="css\plugins\animate\images\transparent\black-0.5.png" />
+    <Content Include="css\plugins\animate\images\transparent\black-0.6.png" />
+    <Content Include="css\plugins\animate\images\transparent\black-0.7.png" />
+    <Content Include="css\plugins\animate\images\transparent\black-0.8.png" />
+    <Content Include="css\plugins\animate\images\transparent\black-0.9.png" />
+    <Content Include="css\plugins\animate\images\transparent\white-0.1.png" />
+    <Content Include="css\plugins\animate\images\transparent\white-0.2.png" />
+    <Content Include="css\plugins\animate\images\transparent\white-0.3.png" />
+    <Content Include="css\plugins\animate\images\transparent\white-0.4.png" />
+    <Content Include="css\plugins\animate\images\transparent\white-0.5.png" />
+    <Content Include="css\plugins\animate\images\transparent\white-0.6.png" />
+    <Content Include="css\plugins\animate\images\transparent\white-0.7.png" />
+    <Content Include="css\plugins\animate\images\transparent\white-0.8.png" />
+    <Content Include="css\plugins\animate\images\transparent\white-0.9.png" />
+    <Content Include="css\plugins\animate\images\transparent\white-0.98.png" />
+    <Content Include="css\plugins\animate\images\ui-icons_444444_256x240.png" />
+    <Content Include="css\plugins\animate\images\ui-icons_555555_256x240.png" />
+    <Content Include="css\plugins\animate\images\ui-icons_777620_256x240.png" />
+    <Content Include="css\plugins\animate\images\ui-icons_777777_256x240.png" />
+    <Content Include="css\plugins\animate\images\ui-icons_cc0000_256x240.png" />
+    <Content Include="css\plugins\animate\images\ui-icons_ffffff_256x240.png" />
     <Content Include="css\plugins\animate\webfonts\fa-brands-400.svg" />
     <Content Include="css\plugins\animate\webfonts\fa-regular-400.svg" />
     <Content Include="css\plugins\animate\webfonts\fa-solid-900.svg" />
@@ -462,6 +493,10 @@
     <Content Include="css\plugins\ionicons\fonts\ionicons.svg" />
     <Content Include="css\plugins\sweetalert2.min.css" />
     <Content Include="favicon.ico" />
+    <Content Include="js\jsProductos.js" />
+    <Content Include="Productos.aspx" />
+    <Content Include="js\jsProductosSubGrupos.js" />
+    <Content Include="ProductosSubGrupos.aspx" />
     <Content Include="imagenes\Formularios\gv4.png" />
     <Content Include="imagenes\Formularios\Inicio_GV.png" />
     <Content Include="imagenes\Formularios\Login-bg.jpg" />
@@ -1682,6 +1717,20 @@
     </Compile>
     <Compile Include="CatalogoEmpleados.aspx.designer.cs">
       <DependentUpon>CatalogoEmpleados.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Productos.aspx.cs">
+      <DependentUpon>Productos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Productos.aspx.designer.cs">
+      <DependentUpon>Productos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProductosSubGrupos.aspx.cs">
+      <DependentUpon>ProductosSubGrupos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProductosSubGrupos.aspx.designer.cs">
+      <DependentUpon>ProductosSubGrupos.aspx</DependentUpon>
     </Compile>
     <Compile Include="ProductosGrupos.aspx.cs">
       <DependentUpon>ProductosGrupos.aspx</DependentUpon>

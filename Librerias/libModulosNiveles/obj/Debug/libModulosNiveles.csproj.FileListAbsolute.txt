@@ -18,3 +18,13 @@ C:\Sistemas\Optica_GIT\4\Opticas\Librerias\libModulosNiveles\obj\Debug\libModulo
 C:\Sistemas\Optica_GIT\4\Opticas\Librerias\libModulosNiveles\obj\Debug\libModulosNiveles.csproj.CopyComplete
 C:\Sistemas\Optica_GIT\4\Opticas\Librerias\libModulosNiveles\obj\Debug\libModulosNiveles.dll
 C:\Sistemas\Optica_GIT\4\Opticas\Librerias\libModulosNiveles\obj\Debug\libModulosNiveles.pdb
+C:\Users\52555\source\repos\Opticas\Librerias\libModulosNiveles\bin\Debug\libModulosNiveles.dll
+C:\Users\52555\source\repos\Opticas\Librerias\libModulosNiveles\bin\Debug\libModulosNiveles.pdb
+C:\Users\52555\source\repos\Opticas\Librerias\libModulosNiveles\bin\Debug\Conexion.dll
+C:\Users\52555\source\repos\Opticas\Librerias\libModulosNiveles\bin\Debug\Newtonsoft.Json.dll
+C:\Users\52555\source\repos\Opticas\Librerias\libModulosNiveles\bin\Debug\Newtonsoft.Json.xml
+C:\Users\52555\source\repos\Opticas\Librerias\libModulosNiveles\obj\Debug\libModulosNiveles.csproj.AssemblyReference.cache
+C:\Users\52555\source\repos\Opticas\Librerias\libModulosNiveles\obj\Debug\libModulosNiveles.csproj.CoreCompileInputs.cache
+C:\Users\52555\source\repos\Opticas\Librerias\libModulosNiveles\obj\Debug\libModulosNiveles.csproj.CopyComplete
+C:\Users\52555\source\repos\Opticas\Librerias\libModulosNiveles\obj\Debug\libModulosNiveles.dll
+C:\Users\52555\source\repos\Opticas\Librerias\libModulosNiveles\obj\Debug\libModulosNiveles.pdb

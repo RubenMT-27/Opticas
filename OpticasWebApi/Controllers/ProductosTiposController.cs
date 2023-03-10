@@ -41,7 +41,7 @@ namespace OpticasWebApi.Controllers
             catch (Exception ex)
             {
                 oResult.bError = true;
-                oResult.Msg = "¡Se genero un error interno al momento de obtener el listado de tipos de productos!";
+                oResult.Msg = "¡Se genero un error interno al momento de obtener el listado de Tipos de Productos!";
                 oResult.Msg = ex.Message;
             }
             return oResult;
@@ -74,7 +74,7 @@ namespace OpticasWebApi.Controllers
             catch (Exception ex)
             {
                 oResult.bError = true;
-                oResult.Msg = "¡Se genero un error interno al momento de obtener el listado de tipos de productos!";
+                oResult.Msg = "¡Se genero un error interno al momento de obtener el listado de Tipos de Productos!";
                 oResult.Msg = ex.Message;
             }
             return oResult;
@@ -97,7 +97,7 @@ namespace OpticasWebApi.Controllers
 
                     if (!oProductosTipos.objError.bError)
                     {
-                        oResult.Msg = "¡Se ha guardado el nuevo tipo de producto de forma correcta!";
+                        oResult.Msg = "¡Se ha guardado el nuevo Tipo de Producto de forma correcta!";
                     }
                     else
                     {
@@ -109,7 +109,7 @@ namespace OpticasWebApi.Controllers
             catch (Exception ex)
             {
                 oResult.bError = true;
-                oResult.Msg = "¡Se ha producido un error al guardar el tipo de producto, favor de verificar!";
+                oResult.Msg = "¡Se ha producido un error al guardar el Tipo de Producto, favor de verificar!";
                 oResult.Msg = ex.Message;
             }
             return oResult;
@@ -133,7 +133,7 @@ namespace OpticasWebApi.Controllers
 
                     if (!oProductosTipos.objError.bError)
                     {
-                        oResult.Msg = "¡Se ha actualizado el tipo de producto de forma correcta!";
+                        oResult.Msg = "¡Se ha actualizado el Tipo de Producto de forma correcta!";
                     }
                     else
                     {
@@ -145,7 +145,7 @@ namespace OpticasWebApi.Controllers
             catch (Exception ex)
             {
                 oResult.bError = true;
-                oResult.Msg = "¡Se ha producido un error al actualizar el tipo de producto, favor de verificar!";
+                oResult.Msg = "¡Se ha producido un error al actualizar el Tipo de Producto, favor de verificar!";
                 oResult.Msg = ex.Message;
             }
             return oResult;
@@ -167,7 +167,7 @@ namespace OpticasWebApi.Controllers
 
                     if (!oProductosTipos.objError.bError)
                     {
-                        oResult.Msg = "¡Se ha eliminado el tipo de producto de forma correcta!";
+                        oResult.Msg = "¡Se ha eliminado el Tipo de Producto de forma correcta!";
                     }
                     else
                     {
@@ -179,7 +179,7 @@ namespace OpticasWebApi.Controllers
             catch (Exception ex)
             {
                 oResult.bError = true;
-                oResult.Msg = "¡Se ha producido un error al eliminar el tipo de producto, favor de verificar!";
+                oResult.Msg = "¡Se ha producido un error al eliminar el Tipo de Producto, favor de verificar!";
                 oResult.Msg = ex.Message;
             }
             return oResult;
