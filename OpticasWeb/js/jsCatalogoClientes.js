@@ -3,7 +3,9 @@
 $(document).ready(function () {
     CrearGrid();
     CrearDataGrid();
-    CrearControles();
+  
+        CrearControles();
+   
 });
 
 //Funciones Pantalla Principal
@@ -29,7 +31,7 @@ function CrearGrid() {
 
 
         excel: {
-            fileName: "Catálogo_De_Clientes.xlsx",
+            fileName: "Catálogo_De_Pacientes.xlsx",
             allPages: true,
             filterable: true
         },
@@ -45,7 +47,7 @@ function CrearGrid() {
                 headerAttributes: { "class": "k-text-center !k-justify-content-center font-weight-bold" },
                 attributes: { style: "text-align: center;" },
                 width: 240,
-                title: "Número de Cliente"
+                title: "Número de Paciente"
             },
             {
                 field: "Nombre",
@@ -159,7 +161,7 @@ function CrearDataGrid() {
             }
         },
         error: function (e) {
-            bsMsgBox('¡Se genero un error al momento de obtener los datos de los Clientes!', "Error", "Error");
+            bsMsgBox('¡Se genero un error al momento de obtener los datos de los Pacientes!', "Error", "Error");
         },
         pageSize: 100,
         schema: {
@@ -209,7 +211,7 @@ function CrearControles() {
                 effects: "fade:out"
             }
         },
-        title: "Registrar Nuevo Cliente"
+        title: "Registrar Nuevo Paciente"
     }).data("kendoWindow").center();
 
 
@@ -382,7 +384,7 @@ function onEditClick() {
         });
 
         $("#kdWindow").data("kendoWindow").open();
-        $("#kdWindow").data("kendoWindow").title("Editar Cliente");
+        $("#kdWindow").data("kendoWindow").title("Editar Paciente");
 
 
 
@@ -452,7 +454,7 @@ function onEliminarClick() {
         var IdCliente = dataItem.IdCliente
 
         Swal.fire({
-            title: '¿Seguro de eliminar al cliente?',
+            title: '¿Seguro de eliminar al paciente?',
             showDenyButton: true,
             showCancelButton: true,
             confirmButtonText: 'Si',
@@ -462,7 +464,7 @@ function onEliminarClick() {
             if (result.isConfirmed) {
                 EliminarCliente();
             } else if (result.isDenied) {
-                Swal.fire('¡El cliente no fue eliminado!', '', 'info')
+                Swal.fire('¡El paciente no fue eliminado!', '', 'info')
             }
         })
        
@@ -678,7 +680,7 @@ function libClientes() {
                     dialog.close();
                     Swal.fire(
                         'Registro Correcto!',
-                        'Se registró correctamente al cliente!',
+                        'Se registró correctamente al paciente!',
                         'success'
                     )
                     CrearDataGrid();
@@ -733,7 +735,7 @@ function libClientes() {
                     dialog.close();
                     Swal.fire(
                         'Actualización Correcta!',
-                        'Se actualizó correctamente el cliente!',
+                        'Se actualizó correctamente el paciente!',
                         'success'
                     )
                     CrearDataGrid();
@@ -791,7 +793,7 @@ function libClientes() {
                     dialog.close();
                     Swal.fire(
                         'Eliminación Correcta!',
-                        'Se eliminó correctamente el cliente!',
+                        'Se eliminó correctamente el paciente!',
                         'success'
                     )
                     CrearDataGrid();

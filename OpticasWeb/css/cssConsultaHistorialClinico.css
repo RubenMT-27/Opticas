@@ -1,0 +1,27 @@
+﻿.bg-Other-Months {
+    background: #F6F6F6;
+}
+
+.bg-Fines-Semana {
+    background: #F6F6F6;
+}
+
+.window-footer {
+    position: absolute;
+    bottom: 0;
+    display: block;
+    width: 30%;
+    margin-top: 150px;
+    padding: 19px 0 20px;
+    text-align: right;
+    border-top: 1px solid #e5e5e5;
+}
+
+.form-right {
+    float: right;
+}
+
+.form-control {
+    width: auto !important;
+}
+

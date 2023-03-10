@@ -38,7 +38,7 @@
                      
                     <div id="grdNivelEmpleado" class="kendoGrid"></div>
 
-                    <div id="kdWindow" class="panel panel-info" data-sortable-id="index-1">
+                    <div id="kdWindow" class="panel panel-info" data-sortable-id="index-1" style="display: none">
                         <div class="row justify-content-start align-items-center">
                             <div class="col-sm-10" id="dTxtNombre">
                                 <input id="kdTxtNombre" name="kdTxtNombre" class="w-100"/>

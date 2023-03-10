@@ -1,13 +1,6 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/mpOpticas.Master" CodeBehind="CatalogoEmpleados.aspx.cs" Inherits="OpticasWeb.CatalogoEmpleados" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="cphCss" runat="server">
-    <%--    <link rel="stylesheet" href="js/plugins/kendoui/styles/kendo.common.min.css" />
-    <link rel="stylesheet" href="js/plugins/kendoui/styles/kendo.bootstrap-v4.min.css" />
-    <link href="js/plugins/kendoui/styles/kendo.default.mobile.min.css" rel="stylesheet" />--%>
-    <%--    <script src="js/plugins/sweetalert2/sweetalert2.all.min.js"></script>
-      <link href="js/plugins/KendoUI-R1-2023/styles/kendo.common.min.css" rel="stylesheet" />--%>
-    <%--<link href="js/plugins/KendoUI-R1-2023/styles/kendo.default.min.css" rel="stylesheet" />
-    <link href="js/plugins/KendoUI-R1-2023/styles/kendo.default.mobile.min.css" rel="stylesheet" />--%>
     <link href="css/Kendo/Kendo-2023-R1/styles/kendo.common.min.css" rel="stylesheet" />
     <link href="css/Kendo/Kendo-2023-R1/styles/kendo.bootstrap-v4.min.css" rel="stylesheet" />
     <link href="css/cssCatalogoEmpleados.css" rel="stylesheet" />
@@ -35,7 +28,7 @@
                 <div class="panel-body p-t-10">
                     <div id="grdMisMuestras" class="kendoGrid"></div>
 
-                    <div id="kdWindow" class="panel panel-info" data-sortable-id="index-1">
+                    <div id="kdWindow" class="panel panel-info" data-sortable-id="index-1" style="display: none">
                         <div class="row justify-content-start align-items-center">
                             <div class="col-sm-4" id="dTxtNombre">
                                 <input id="kdTxtNombre" name="kdTxtNombre" class="w-100" required validationmessage="Llenar Nombre" />
@@ -132,8 +125,4 @@
     <script src="js/plugins/jsZip/jszip.min.js"></script>
     <script src="js/jsCatalogoEmpleados.js"></script>
 
-    <%--<script src="js/plugins/KendoUI-R1-2023/js/kendo.all.min.js"></script>--%>
-    <%--<script src="js/plugins/KendoUI-R1-2023/js/messages/kendo.messages.es-MX.min.js"></script>--%>
-    <%--<script src="js/plugins/KendoUI-R1-2023/js/kendo.timezones.min.js"></script>--%>
-    <%--<script src="js/plugins/KendoUI-R1-2023/js/cultures/kendo.culture.es-MX.min.js"></script>--%>
 </asp:Content>
