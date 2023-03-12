@@ -24,7 +24,7 @@
             }
         },
         error: function (e) {
-            CrearAlerta('¡Se genero un error al momento de obtener los datos de las tipos de SubProductos!', "Error", "Error");
+            CrearAlerta('¡Se genero un error al momento de obtener los datos de los SubTipos de Productos!', "Error", "Error");
         }
     });
 
@@ -50,7 +50,7 @@
             "excel",
             "search"],
         excel: {
-            fileName: "ListaTiposSubProductos.xlsx",
+            fileName: "ListaSubTiposProductos.xlsx",
             allPages: true,
             filterable: true
         },
@@ -65,7 +65,7 @@
                 field: "ProductoSubTipo",
                 headerAttributes: { "class": "k-text-center !k-justify-content-center font-weight-bold" },
                 attributes: { style: "text-align: center;" },
-                title: "Tipo de SubProducto"
+                title: "SubTipo de Producto"
             }
         ]
     });
@@ -103,7 +103,7 @@ function NuevoRegistro() {
 }
 
 async function EditarRegistro() {
-    var bEditar = await CrearAlertaConfirm("¿Esta Seguro Editar el Tipo de SubProducto?", "Editar Tipo de SubProducto", 'question');
+    var bEditar = await CrearAlertaConfirm("¿Esta Seguro Editar el SubTipo de Producto?", "Editar SubTipo de Producto", 'question');
 
     if (bEditar == true) {
         if (ValidarSeleccion() == true) {
@@ -119,7 +119,7 @@ async function EditarRegistro() {
             $("#txtProductoSubTipo").data("kendoTextBox").value(selectedItem.ProductoSubTipo);
             $("#ddlProductoTipo").data("kendoDropDownList").value(selectedItem.IdProductoTipo);
         } else {
-            CrearAlerta("¡Debe seleccionar un tipo de SubProducto para modificar!", "Selección Tipo SubProducto", "warning")
+            CrearAlerta("¡Debe seleccionar un SubTipo de Producto para modificar!", "Selección SubTipo Producto", "warning")
         }
     }
 }
@@ -140,7 +140,7 @@ function CrearControlesWindow() {
 
     $("#txtProductoSubTipo").kendoTextBox({
         label: {
-            content: "Tipo de SubProducto",
+            content: "SubTipo de Producto",
             floating: true
         }
     });
@@ -197,7 +197,7 @@ function Guardar() {
 }
 
 async function Eliminar() {
-    var bEliminar = await CrearAlertaConfirm("¿Esta Seguro Eliminar el Tipo de SubProducto?", "Eliminar Tipo de SubProducto", 'question');
+    var bEliminar = await CrearAlertaConfirm("¿Esta Seguro Eliminar el SubTipo de Producto?", "Eliminar SubTipo de Producto", 'question');
 
     if (bEliminar == true) {
         if (ValidarSeleccion() == true) {
@@ -208,7 +208,7 @@ async function Eliminar() {
             oProductosSubTipos.IdProductoSubTipo = selectedItem.IdProductoSubTipo;
             oProductosSubTipos.EliminarProductosSubTiposGrid();
         } else {
-            CrearAlerta("¡Debe seleccionar un tipo de SubProducto para eliminar!", "Selección Tipo SubProducto", "warning")
+            CrearAlerta("¡Debe seleccionar un SubTipo de Producto para eliminar!", "Selección SubTipo Producto", "warning")
         }
     }
 }
@@ -227,6 +227,7 @@ function libProductosSubTipos() {
     var token = sessionStorage.getItem('token');
     var IdProductoTipo;
     var ProductoSubTipo;
+    var IdProductoSubTipo;
 
     this.ListarProductosSubTiposGrid = function (fnResult, fnError) {
         $.ajax({

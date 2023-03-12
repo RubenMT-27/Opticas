@@ -32,6 +32,19 @@ namespace libProductosSubTipos
             }
         }
 
+        public void ListarProductosSubTiposCombo()
+        {
+            Bandera = "s2";
+            dt = Listar();
+
+            if (!objError.bError)
+            {
+                string jsonList;
+                jsonList = JsonConvert.SerializeObject(dt);
+                ListResult = JArray.Parse(jsonList);
+            }
+        }
+
         public void GuardarProductosSubTiposGrid()
         {
             Bandera = "i1";

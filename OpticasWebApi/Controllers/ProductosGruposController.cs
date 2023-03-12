@@ -42,7 +42,7 @@ namespace OpticasWebApi.Controllers
             catch (Exception ex)
             {
                 oResult.bError = true;
-                oResult.Msg = "¡Se genero un error interno al momento de obtener el listado de grupos de productos!";
+                oResult.Msg = "¡Se genero un error interno al momento de obtener el listado de Grupos de Productos!";
                 oResult.Msg = ex.Message;
             }
             return oResult;
@@ -75,7 +75,7 @@ namespace OpticasWebApi.Controllers
             catch (Exception ex)
             {
                 oResult.bError = true;
-                oResult.Msg = "¡Se genero un error interno al momento de obtener el listado de grupos de productos!";
+                oResult.Msg = "¡Se genero un error interno al momento de obtener el listado de Grupos de Productos!";
                 oResult.Msg = ex.Message;
             }
             return oResult;
@@ -98,7 +98,7 @@ namespace OpticasWebApi.Controllers
 
                     if (!oProductosGrupos.objError.bError)
                     {
-                        oResult.Msg = "¡Se ha guardado el nuevo grupo de producto de forma correcta!";
+                        oResult.Msg = "¡Se ha guardado el nuevo Grupo de Producto de forma correcta!";
                     }
                     else
                     {
@@ -110,7 +110,7 @@ namespace OpticasWebApi.Controllers
             catch (Exception ex)
             {
                 oResult.bError = true;
-                oResult.Msg = "¡Se ha producido un error al guardar el grupo de producto, favor de verificar!";
+                oResult.Msg = "¡Se ha producido un error al guardar el Grupo de Producto, favor de verificar!";
                 oResult.Msg = ex.Message;
             }
             return oResult;
@@ -134,7 +134,7 @@ namespace OpticasWebApi.Controllers
 
                     if (!oProductosGrupos.objError.bError)
                     {
-                        oResult.Msg = "¡Se ha actualizado el grupo de producto de forma correcta!";
+                        oResult.Msg = "¡Se ha actualizado el Grupo de Producto de forma correcta!";
                     }
                     else
                     {
@@ -146,7 +146,7 @@ namespace OpticasWebApi.Controllers
             catch (Exception ex)
             {
                 oResult.bError = true;
-                oResult.Msg = "¡Se ha producido un error al actualizar el grupo de producto, favor de verificar!";
+                oResult.Msg = "¡Se ha producido un error al actualizar el Grupo de Producto, favor de verificar!";
                 oResult.Msg = ex.Message;
             }
             return oResult;
@@ -168,7 +168,7 @@ namespace OpticasWebApi.Controllers
 
                     if (!oProductosGrupos.objError.bError)
                     {
-                        oResult.Msg = "¡Se ha eliminado el grupo de producto de forma correcta!";
+                        oResult.Msg = "¡Se ha eliminado el Grupo de Producto de forma correcta!";
                     }
                     else
                     {
@@ -180,7 +180,7 @@ namespace OpticasWebApi.Controllers
             catch (Exception ex)
             {
                 oResult.bError = true;
-                oResult.Msg = "¡Se ha producido un error al eliminar el grupo de producto, favor de verificar!";
+                oResult.Msg = "¡Se ha producido un error al eliminar el Grupo de Producto, favor de verificar!";
                 oResult.Msg = ex.Message;
             }
             return oResult;

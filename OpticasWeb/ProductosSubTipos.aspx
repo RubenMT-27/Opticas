@@ -8,7 +8,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="cphJs" runat="server">
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="cphPrincipal" runat="server">
-    <h1 class="page-header p-1 text-white">Catálogo Tipos de SubProductos<small class="text-white"> Gran Visión</small></h1>
+    <h1 class="page-header p-1 text-white">Catálogo SubTipos de Productos<small class="text-white"> Gran Visión</small></h1>
 
     <div class="row row-space-30 justify-content-center">
         <div class="col-lg-8 col-md-12">
@@ -19,7 +19,7 @@
                             <i class="far fa-circle fa-stack-2x text-white"></i>
                             <i class="fa fas fa-list-alt fa-stack-1x text-white"></i>
                         </span>
-                        Tipos de SubProductos
+                        SubTipos de Productos
                     </h6>
                 </div>
 
