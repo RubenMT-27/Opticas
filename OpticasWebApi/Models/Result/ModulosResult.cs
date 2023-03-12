@@ -9,6 +9,7 @@ namespace OpticasWebApi.Models.Result
     {
         public bool bError { get; set; }
         public string Msg { get; set; }
+        public dynamic ListModulosSecciones { get; set; }
         public dynamic ListModulos { get; set; }
     }
 }

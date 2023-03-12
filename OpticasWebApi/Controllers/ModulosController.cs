@@ -29,6 +29,18 @@ namespace OpticasWebApi.Controllers
                 using (rnModulos oModulos = new rnModulos())
                 {
                     oModulos.sXML = eEntModulos.IdNivelUsuario.ToString();
+                    oModulos.ListarModulosSecciones();
+
+                    if (!oModulos.objError.bError)
+                    {
+                        oResult.ListModulosSecciones = oModulos.ListResult;
+                    }
+                    else
+                    {
+                        throw oModulos.objError.uException;
+                    }
+
+                    oModulos.sXML = eEntModulos.IdNivelUsuario.ToString();
                     oModulos.ListarModulos();
 
                     if (!oModulos.objError.bError)

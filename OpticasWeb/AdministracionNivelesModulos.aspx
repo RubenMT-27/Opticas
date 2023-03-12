@@ -8,7 +8,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="cphJs" runat="server">
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="cphPrincipal" runat="server">
-      <h1 class="page-header p-1 text-white">Administración Niveles - Módulos<small class="text-white"> Gran Visión</small></h1>
+    <h1 class="page-header p-1 text-white">Administración Niveles - Módulos<small class="text-white"> Gran Visión</small></h1>
     <div class="row row-space-30">
         <div class="col-lg-12 ui-sortable">
             <div class="panel panel-primary" data-sortable-id="index-1">
@@ -21,44 +21,26 @@
 
                         Niveles - Módulos
                     </h4>
-                  
                 </div>
 
                 <div id="kdCombos" class="panel-body p-t-10">
-
-                      <div class="row justify-content-start align-items-center">
-                           <div class="col-3">
-                            </div>
-                             <div class="col-4">
-                                <input id="kdDdlComboNivel" name="kdDdlComboNivel" class="w-100" required validationmessage="Llenar Nivel" />
-                                <span class="k-invalid-msg" data-for="kdDdlComboNivel"></span>
-                            </div>
+                    <div class="row pb-1">
+                        <div class="col">
+                            <input id="kdDdlComboNivel" name="kdDdlComboNivel" class="w-100" required validationmessage="Llenar Nivel" />
+                            <span class="k-invalid-msg" data-for="kdDdlComboNivel"></span>
                         </div>
-                       <div class="row justify-content-start align-items-center">
-                           
-                         <div class="col-3">
-                            </div>
-                             <div class="col-4">
-                                <input id="kdDdlComboModulo" name="kdDdlComboModulo" class="w-100" required validationmessage="Llenar Módulo" />
-                                <span class="k-invalid-msg" data-for="kdDdlComboModulo"></span>
-                            </div>
+                        <div class="col">
+                            <input id="kdDdlComboModulo" name="kdDdlComboModulo" class="w-100" required validationmessage="Llenar Módulo" />
+                            <span class="k-invalid-msg" data-for="kdDdlComboModulo"></span>
                         </div>
-                     
-                    <div id="grdNivelModulo" class="kendoGrid" ></div>
+                    </div>
 
-              
+                    <div id="grdNivelModulo" class="kendoGrid"></div>
+
                 </div>
-
-                <div>
-                </div>
-
             </div>
         </div>
     </div>
-
-
-
-
 
     <div id="alert"></div>
 

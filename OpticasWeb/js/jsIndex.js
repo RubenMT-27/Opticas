@@ -82,9 +82,20 @@ function libModulos() {
             success: function (result) {
                 if (!result.bError) {
                     /*BindHtml(result.ListModulos, "#SubMenuFill", "#tmplSubMenu")*/
+                    result.ListModulosSecciones.forEach(function (item) {
+
+                        if (item.bSubSeccion == 1) {
+                            var Seccion = '<li><a class="dropdown-item" style="text-align: center;">' + item.Nombre + ' &raquo; </a><ul class="dropdown-menu dropdown-submenu" id="SubSeccionesMenuFill' + item.IdModuloSubTipo + '"></ul></li>  '
+                            $('#SubMenuFill' + item.IdModuloTipo).append(Seccion);
+                        } else if (item.bSubSeccion == 0) {
+                            var Seccion = '<li><a class="dropdown-item" style="text-align: center;" href="' + item.Pagina + '" IdModulo="' + item.IdModulo + '" title="' + item.Descripcion + '">' + item.Nombre + '<span class="' + item.Icono + '" style="padding-left: 20px;"></span></a></li>'
+                            $('#SubMenuFill' + item.IdModuloTipo).append(Seccion);
+                        }
+                    });
+
                     result.ListModulos.forEach(function (item) {
-                        var liSubMenu = '<li><a class="dropdown-item" style="text-align: center;" href="' + item.NombrePagina + '" IdModulo="' + item.IdModulo + '" title="' + item.DescripcionModulo + '">' + item.NombreModulo + '<span class="' + item.IconoModulo + '" style="padding-left: 20px;"></span></a></li>'
-                        $('#SubMenuFill' + item.IdModuloTipo).append(liSubMenu);
+                        var liSeccionMenu = '<li><a class="dropdown-item" style="text-align: center;" href="' + item.Pagina + '" IdModulo="' + item.IdModulo + '" title="' + item.Descripcion + '">' + item.Nombre + '<span class="' + item.Icono + '" style="padding-left: 20px;"></span></a></li>'
+                        $('#SubSeccionesMenuFill' + item.IdModuloSubTipo).append(liSeccionMenu);
                     });
 
                     var oEmpleadosUsuarios = new libEmpleadosUsuarios();

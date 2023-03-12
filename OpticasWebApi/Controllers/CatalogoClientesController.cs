@@ -188,41 +188,41 @@ namespace OpticasWebApi.Controllers
 
 
 
-        [HttpGet]
-        [Route("GetListClientesCombo")]
-        public entResultListClientes GetListNivelesUsuariosCombo([FromUri] string sparam)
-        {
-            entClientes eDatosSesion;
-            entResultListClientes oResult = new entResultListClientes();
+        //[HttpGet]
+        //[Route("GetListClientesCombo")]
+        //public entResultListClientes GetListNivelesUsuariosCombo([FromUri] string sparam)
+        //{
+        //    entClientes eDatosSesion;
+        //    entResultListClientes oResult = new entResultListClientes();
 
-            eDatosSesion = (new JavaScriptSerializer()).Deserialize<entClientes>(sparam);
+        //    eDatosSesion = (new JavaScriptSerializer()).Deserialize<entClientes>(sparam);
 
-            oResult.bError = true;
-            try
-            {
-                using (rnClientes oSolicitudes = new rnClientes())
-                {
-                    oSolicitudes.ListarClientesCombo();
+        //    oResult.bError = true;
+        //    try
+        //    {
+        //        using (rnClientes oSolicitudes = new rnClientes())
+        //        {
+        //            oSolicitudes.ListarClientesCombo();
 
-                    if (!oSolicitudes.objError.bError)
-                    {
-                        oResult.ListClientes = oSolicitudes.ListResult;
-                    }
-                    else
-                    {
-                        throw oSolicitudes.objError.uException;
-                    }
-                }
-                oResult.bError = false;
-            }
-            catch (Exception ex)
-            {
-                oResult.bError = true;
-                oResult.Msg = "¡Se genero un error interno al momento de obtener los niveles!";
-                oResult.Msg = ex.Message;
-            }
-            return oResult;
-        }
+        //            if (!oSolicitudes.objError.bError)
+        //            {
+        //                oResult.ListClientes = oSolicitudes.ListResult;
+        //            }
+        //            else
+        //            {
+        //                throw oSolicitudes.objError.uException;
+        //            }
+        //        }
+        //        oResult.bError = false;
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        oResult.bError = true;
+        //        oResult.Msg = "¡Se genero un error interno al momento de obtener los niveles!";
+        //        oResult.Msg = ex.Message;
+        //    }
+        //    return oResult;
+        //}
 
 
 

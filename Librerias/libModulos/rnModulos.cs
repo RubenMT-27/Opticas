@@ -20,7 +20,7 @@ namespace Opticas.libModulos
 
         }
 
-        public void ListarModulos()
+        public void ListarModulosSecciones()
         {
             Bandera = "s1";
             dt = Listar();
@@ -32,5 +32,19 @@ namespace Opticas.libModulos
                 ListResult = JArray.Parse(jsonList);
             }
         }
+
+        public void ListarModulos()
+        {
+            Bandera = "s2";
+            dt = Listar();
+
+            if (!objError.bError)
+            {
+                string jsonList;
+                jsonList = JsonConvert.SerializeObject(dt);
+                ListResult = JArray.Parse(jsonList);
+            }
+        }
+
     }
 }
