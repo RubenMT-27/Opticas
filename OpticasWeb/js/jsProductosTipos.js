@@ -1,222 +1,420 @@
 ﻿$(document).ready(function () {
-    var grd = $("#kdGridTiposProductos");
-    var oProductosTipos = new libProductosTipos();
+    CrearGrid();
+    CrearDataGrid();
+    CrearControles();
+});
 
-    var dataSourceGrid = new kendo.data.DataSource({
-        pageSize: 10,
-        transport: {
-            read: function (options) {
-                oProductosTipos.ListarProductosTiposGrid(function (result) {
-                    options.success(result.ListProductosTipos)
-                }, function (e) {
-                    options.error();
-                });
-            }
-        },
-        schema: {
-            model: {
-                id: "IdProductoTipo",
-                fields: {
-                    ProductoTipo: { type: "string" },
-                    Descripcion: { type: "string" }
-                }
-            }
-        },
-        error: function (e) {
-            CrearAlerta('¡Se genero un error al momento de obtener los datos de los Tipos de Productos!', "Error", "Error");
-        }
-    });
-
-    grd.kendoGrid({
-        dataSource: dataSourceGrid,
+function CrearGrid() {
+    var kdGridTiposProductos = $("#kdGridTiposProductos");
+    kdGridTiposProductos.kendoGrid({
         scrollable: true,
         sortable: true,
-        resizable: true,
-        reorderable: true,
-        filterable: false,
-        selectable: true,
-        persistSelection: true,
-        groupable: false,
-        pageable: {
-            refresh: true,
-            pageSize: true
-        }
-        ,
-        toolbar: [
-            {
-                template: kendo.template($("#btnTemplates").html())
+
+        selectable: "multiple, row",
+        pageable: true,
+        toolbar: [{
+            template: '<a id="newItemButton"">Nuevo</a>'
+        }, {
+                template: '<a id="EditarItemButton"">Editar</a>'
             },
-            "excel",
-            "search"],
+            {
+                template: '<a id="EliminarItemButton"">Eliminar</a>'
+            },
+            "excel", "search"
+        ],
+
+
         excel: {
-            fileName: "ListaTiposProductos.xlsx",
+            fileName: "Lista_Tipos_Productos.xlsx",
             allPages: true,
             filterable: true
         },
+        search: {
+            fields: ["ProductoTipo", "ProductoGrupo", "Descripcion"]
+        },
+        resizable: true,
+        filterable: true,
         columns: [
+
             {
                 field: "ProductoTipo",
                 headerAttributes: { "class": "k-text-center !k-justify-content-center font-weight-bold" },
                 attributes: { style: "text-align: center;" },
+                width: 240,
                 title: "Tipo de Producto"
+            },
+            {
+                field: "ProductoGrupo",
+                headerAttributes: { "class": "k-text-center !k-justify-content-center font-weight-bold" },
+                attributes: { style: "text-align: center;" },
+                width: 240,
+                title: "Grupo de Producto"
             },
             {
                 field: "Descripcion",
                 headerAttributes: { "class": "k-text-center !k-justify-content-center font-weight-bold" },
                 attributes: { style: "text-align: center;" },
-                title: "Descripcion"
-            }
+                width: 240,
+                title: "Descripción"
+            },
+           
+            {
+                field: "FechaAlta",
+                headerAttributes: { "class": "k-text-center !k-justify-content-center font-weight-bold" },
+                attributes: { style: "text-align: center;" },
+                width: 240,
+                title: "Fecha de Alta"
+            },
         ]
+    }).after(() => {
+        $('#newItemButton').kendoButton({
+            icon: 'k-icon k-i-plus k-button-icon',
+            click: onNewClick
+        });
+        $('#EditarItemButton').kendoButton({
+            icon: 'k-icon k-i-pencil k-button-icon',
+            click: onEditClick
+        });
+
+        $('#EliminarItemButton').kendoButton({
+            icon: 'k-icon k-i-trash k-button-icon',
+            click: onEliminarClick
+        });
     });
 
-    $("#btnNuevo").click(function () {
-        NuevoRegistro();
-    });
 
-    $("#btnEditar").click(function () {
-        EditarRegistro();
-    });
 
-    $("#btnEliminar").click(function () {
-        Eliminar();
-    });
 
-    $(document).on('click', '#btnGuardar', function () {
-        Guardar();
-    });
-
-    $(document).on('click', '#btnCancelar', function () {
-        CerrarWindow();
-    });
-
-    $(document).on('input', '#txtDescripcion', function (e) {
-        $('.k-counter-container .k-counter-value').html($(e.target).val().length);
-    });
-});
-
-function NuevoRegistro() {
-    bTitulo = "Nuevo Tipo de Producto"
-    CrearWindow(bTitulo);
-
-    sessionStorage.setItem('TipoOperacion', $("#btnNuevo").attr("TipoOperacion"));
-
-    $("#txtProductoTipo").val("");
-    $("#txtDescripcion").val("");
-    $("#hidIdProductoTipo").val("");
 }
 
-async function EditarRegistro() {
-    var bEditar = await CrearAlertaConfirm("¿Esta Seguro Editar el Tipo de Producto?", "Editar Tipo de Producto", 'question');
+//Abrir window nuevo registro
+function onNewClick() {
+    var btnGuardar = $("#kdBtnGuardar");
+    btnGuardar.show();
+    var btnActualizar = $("#kdBtnActualizar");
+    btnActualizar.hide();
 
-    if (bEditar == true) {
-        if (ValidarSeleccion() == true) {
-            bTitulo = "Editar Tipo de Producto"
-            CrearWindow(bTitulo);
+    LimpiarControles();
+    $("#kdWindow").data("kendoWindow").open().center();
 
-            sessionStorage.setItem('TipoOperacion', $("#btnEditar").attr("TipoOperacion"));
+}
 
-            var grid = $("#kdGridTiposProductos").data("kendoGrid");
-            var selectedItem = grid.dataItem(grid.select());
-            var Contador = selectedItem.Descripcion.length;
+//Abrir window Editar
+function onEditClick() {
+    var btnGuardar = $("#kdBtnGuardar");
+    btnGuardar.hide();
+    var btnActualizar = $("#kdBtnActualizar");
+    btnActualizar.show();
+    var grid = $("#kdGridTiposProductos").data("kendoGrid");
+    var selectedRows = grid.select();
 
-            $("#hidIdProductoTipo").val(selectedItem.IdProductoTipo);
-            $(".k-counter-value").html(Contador);
-            $("#txtProductoTipo").data("kendoTextBox").value(selectedItem.ProductoTipo);
-            $("#txtDescripcion").data("kendoTextArea").value(selectedItem.Descripcion);
-            $("#txtDescripcion").data("kendoTextArea").floatingLabel.refresh();
-        } else {
-            CrearAlerta("¡Debe seleccionar un Tipo de Producto para modificar!", "Selección Tipo Producto", "warning")
+    if (selectedRows.length > 0) {
+
+        var dataItem = grid.dataItem(selectedRows[0]);
+        var IdProducto = dataItem.IdProducto
+
+        LimpiarControles();
+
+        var kdTxtProductoTipo = $("#kdTxtProductoTipo").data("kendoTextBox");
+        var kdDescripcion = $("#kdDescripcion").data("kendoTextBox");
+        var kdDdlProductoGrupo = $("#kdDdlProductoGrupo").data("kendoComboBox");
+
+
+
+        kdTxtProductoTipo.value(dataItem.ProductoTipo);
+        kdDescripcion.value(dataItem.Descripcion);
+
+        kdDdlProductoGrupo.select(function (dataItem2) {
+            return dataItem2.ProductoGrupo === dataItem.ProductoGrupo;
+        });
+
+      
+
+
+
+        $("#kdWindow").data("kendoWindow").open().center();
+        $("#kdWindow").data("kendoWindow").title("Editar Tipo de Producto");
+
+
+
+    } else {
+        CrearAlerta('Es necesario seleccionar un elemento de la tabla para editar', '¡Seleccionar Elemento!', 'warning');
+    }
+
+}
+
+function onEliminarClick() {
+    var btnGuardar = $("#kdBtnGuardar");
+    btnGuardar.hide();
+    var btnActualizar = $("#kdBtnActualizar");
+    btnActualizar.show();
+    var grid = $("#kdGridTiposProductos").data("kendoGrid");
+    var selectedRows = grid.select();
+
+    if (selectedRows.length > 0) {
+
+        var dataItem = grid.dataItem(selectedRows[0]);
+        var IdProductoTipo = dataItem.IdProductoTipo
+
+        Swal.fire({
+            title: '¿Seguro de eliminar el tipo de producto?',
+            showDenyButton: true,
+            showCancelButton: true,
+            confirmButtonText: 'Si',
+            denyButtonText: `No`,
+        }).then((result) => {
+            /* Read more about isConfirmed, isDenied below */
+            if (result.isConfirmed) {
+                EliminarProductoTipo();
+            } else if (result.isDenied) {
+                Swal.fire('¡El tipo de producto no fue eliminado!', '', 'info')
+            }
+        })
+
+    } else {
+        CrearAlerta('Es necesario seleccionar un elemento de la tabla para eliminar', '¡Seleccionar Elemento!', 'warning');
+    }
+
+}
+
+//Llenar Combos
+
+//Llenar Producto Grupo
+var dataSourceKdComboGrupo = new kendo.data.DataSource({
+    transport: {
+        read: function (options) {
+            var oSolicitudesTipos = new libProductosGrupos();
+
+            oSolicitudesTipos.ListarProductosGruposCombo(function (result) {
+                options.success(result.ListProductosGrupos);
+            },
+                function (e) {
+                    options.error();
+                });
         }
+    },
+    error: function (e) {
+        bsMsgBox('¡Se genero un error al momento de obtener los datos de los grupos de productos!', "Error", "Error");
+    },
+    schema: {
+        model: {
+            fields: {
+                IdProductoGrupo: { type: "number" },
+                ProductoGrupo: { type: "string" },
+            }
+        }
+    }
+});
+
+
+//vALIDAR cONTROLES
+
+function ValidarControlesGuardar() {
+
+    var validator = $("#kdWindow").kendoValidator().data("kendoValidator");
+
+    if (validator.validate()) {
+        GuardarProductoTipo();
+
+    } else {
+        var popupNotification = $("#popupNotification").kendoNotification().data("kendoNotification");
+        popupNotification.show(kendo.toString("Favor de llenar los campos faltantes", "info"));
+    }
+
+
+
+}
+
+function ValidarControlesActualizar() {
+
+    var validator = $("#kdWindow").kendoValidator().data("kendoValidator");
+
+    if (validator.validate()) {
+        ActualizarProductoTipo();
+    } else {
+        var popupNotification = $("#popupNotification").kendoNotification().data("kendoNotification");
+        popupNotification.show(kendo.toString("Favor de llenar los campos faltantes", "info"));
     }
 }
 
-function CrearWindow(bTitulo) {
-    $("#kdWindow").kendoWindow({
-        width: "350px",
-        height: "400px",
-        actions: ["Close"],
-        resizable: false
-    }).data("kendoWindow").open().center().title(bTitulo).content(kendo.template($("#ControlesWindowTemplate").html()));
+//Guardar - Eliminar - Actualizar
 
-    CrearControlesWindow();
+function GuardarProductoTipo() {
+
+    var jsonDatosSesion = jQuery.parseJSON(sessionStorage.getItem('DatosSesion'));
+    var oEmpleados = new libProductosTipos();
+    oEmpleados.ProductoTipo = $("#kdTxtProductoTipo").data("kendoTextBox").value();
+    oEmpleados.Descripcion = $("#kdDescripcion").data("kendoTextBox").value();
+    oEmpleados.IdProductoGrupo = $("#kdDdlProductoGrupo").data("kendoComboBox").value();
+    oEmpleados.GuardarProductoTipo();
+
 }
 
-function CrearControlesWindow() {
-    $("#txtProductoTipo").kendoTextBox({
+function ActualizarProductoTipo() {
+
+    var grid = $("#kdGridTiposProductos").data("kendoGrid");
+    var selectedRows = grid.select();
+    var dataItem = grid.dataItem(selectedRows[0]);
+    var IdProductoTipo = dataItem.IdProductoTipo
+
+    var jsonDatosSesion = jQuery.parseJSON(sessionStorage.getItem('DatosSesion'));
+    var oEmpleados = new libProductosTipos();
+
+    oEmpleados.ProductoTipo = $("#kdTxtProductoTipo").data("kendoTextBox").value();
+    oEmpleados.Descripcion = $("#kdDescripcion").data("kendoTextBox").value();
+    oEmpleados.IdProductoGrupo = $("#kdDdlProductoGrupo").data("kendoComboBox").value();
+    oEmpleados.IdProductoTipo = IdProductoTipo;
+    oEmpleados.ActualizarProductoTipo();
+
+}
+
+function EliminarProductoTipo() {
+
+    var grid = $("#kdGridTiposProductos").data("kendoGrid");
+    var selectedRows = grid.select();
+    var dataItem = grid.dataItem(selectedRows[0]);
+    var IdProductoTipo = dataItem.IdProductoTipo
+
+    var jsonDatosSesion = jQuery.parseJSON(sessionStorage.getItem('DatosSesion'));
+    var oEmpleados = new libProductosTipos();
+
+
+    oEmpleados.IdProductoTipo = IdProductoTipo;
+    oEmpleados.EliminarProductoTipo();
+
+}
+
+function CrearDataGrid() {
+    var kdGridTiposProductos = $("#kdGridTiposProductos");
+    var jsonDatosSesion = jQuery.parseJSON(sessionStorage.getItem('DatosSesion'));
+
+    var dataSource = new kendo.data.DataSource({
+        pageSize: 10,
+        transport: {
+            read: function (options) {
+
+
+
+                var oNotiApp = new libProductosTipos();
+                oNotiApp.ListarProductosTiposGrid(function (result) {
+                    options.success(result.ListProductosTipos)
+                },
+                    function (e) {
+                        options.error();
+                    });
+            }
+        },
+        error: function (e) {
+            bsMsgBox('¡Se genero un error al momento de obtener los datos de los tipos de productos!', "Error", "Error");
+        },
+        pageSize: 100,
+        schema: {
+            model: {
+                fields: {
+                    IdProductoTipo: { type: "number" },
+                    IdProductoGrupo: { type: "number" },
+                    Descripcion: { type: "string" },
+                    ProductoTipo: { type: "string" },
+                    ProductoGrupo: { type: "string" }
+
+                }
+            }
+        },
+        dataSource: dataSource,
+    });
+
+    kdGridTiposProductos.data("kendoGrid").setDataSource(dataSource);
+}
+
+function CrearControles() {
+
+    var kdTxtProductoTipo = $("#kdTxtProductoTipo");
+    var kdDdlProductoGrupo = $("#kdDdlProductoGrupo");
+    var kdDescripcion = $("#kdDescripcion");
+    var btnGuardar = $("#kdBtnGuardar");
+    var btnActualizar = $("#kdBtnActualizar");
+    var kdWindow = $("#kdWindow");
+    //Creación de Window para nuevo reistro
+    kdWindow.kendoWindow({
+        visible: false,
+        modal: true,
+        position: {
+            top: 100, // or "100px"
+            left: "5%"
+        },
+        height: "470px",
+        actions: ["Maximize", "Close"],
+        animation: {
+            close: {
+                effects: "fade:out"
+            }
+        },
+        title: "Registrar Nuevo Tipo de Producto"
+    });
+
+    //Creacion de kdTxtModelo
+    kdTxtProductoTipo.kendoTextBox({
         label: {
             content: "Tipo de Producto",
             floating: true
         }
     });
 
-    $("#txtDescripcion").kendoTextArea({
+    
+
+    //Crear Combo de kdDdlProductoGrupo (falata crear datasource)
+    kdDdlProductoGrupo.kendoComboBox({
+        dataSource: dataSourceKdComboGrupo,
+        dataTextField: "ProductoGrupo",
+        dataValueField: "IdProductoGrupo",
+        clearButton: false,
+        filter: "contains",
+        suggest: true,
+
+        label: {
+            content: "Grupo de Producto",
+            floating: true
+        },
+    });
+
+    var fabric = $("#kdDdlProductoGrupo").data("kendoComboBox");
+    fabric.input.attr("readonly", true)
+
+    //Creacion de kdDescripcion
+    kdDescripcion.kendoTextBox({
         label: {
             content: "Descripción",
             floating: true
-        },
-        rows: 5,
-        maxLength: 300
-    });
-}
-
-function ValidarSeleccion() {
-    var grid = $("#kdGridTiposProductos").data("kendoGrid");
-    var selectedItem = grid.select();
-
-    if (selectedItem.length > 0) {
-        return true;
-    } else {
-        return false;
-    }
-}
-
-function Guardar() {
-    var oProductosTipos = new libProductosTipos();
-    var TipoOperacion = sessionStorage.getItem('TipoOperacion');
-
-    if (TipoOperacion == 1) {
-        oProductosTipos.ProductoTipo = $("#txtProductoTipo").data("kendoTextBox").value();
-        oProductosTipos.Descripcion = $("#txtDescripcion").data("kendoTextArea").value();
-        oProductosTipos.GuardarProductosTiposGrid();
-    } else if (TipoOperacion == 2) {
-        oProductosTipos.IdProductoTipo = $("#hidIdProductoTipo").val();
-        oProductosTipos.ProductoTipo = $("#txtProductoTipo").data("kendoTextBox").value();
-        oProductosTipos.Descripcion = $("#txtDescripcion").data("kendoTextArea").value();
-        oProductosTipos.ActualizarProductosTiposGrid();
-    }
-}
-
-async function Eliminar() {
-    var bEliminar = await CrearAlertaConfirm("¿Esta Seguro Eliminar el Tipo de Producto?", "Eliminar Tipo de Producto", 'question');
-
-    if (bEliminar == true) {
-        if (ValidarSeleccion() == true) {
-            var oProductosTipos = new libProductosTipos();
-            var grid = $("#kdGridTiposProductos").data("kendoGrid");
-            var selectedItem = grid.dataItem(grid.select());
-
-            oProductosTipos.IdProductoTipo = selectedItem.IdProductoTipo;
-            oProductosTipos.EliminarProductosTiposGrid();
-        } else {
-            CrearAlerta("¡Debe seleccionar un Tipo de Producto para eliminar!", "Selección Tipo Producto", "warning")
         }
-    }
-}
+    });
 
-function CerrarWindow() {
-    $("#kdWindow").data("kendoWindow").close();
-    $("#txtProductoTipo").val("");
-    $("#txtDescripcion").val("");
-    $("#hidIdProductoTipo").val("");
-    $('#kdGridTiposProductos').data('kendoGrid').clearSelection();
+    //Crear boton guardar
+    btnGuardar.kendoButton({
+        icon: "k-icon k-i-save",
+        themeColor: "primary",
+        click: ValidarControlesGuardar
+    });
+
+    //Crear boton actualizar
+    btnActualizar.kendoButton({
+        icon: "k-icon k-i-save",
+        themeColor: "primary",
+        click: ValidarControlesActualizar
+    });
+
+
 }
 
 function libProductosTipos() {
     var UrlWebGeneral = "http://localhost:44543/api/";
     var token = sessionStorage.getItem('token');
-    var IdProductoTipo;
-    var ProductoTipo;
+    var IdProducto;
     var Descripcion;
+    var Marca;
+    var IdProductoTipo;
+    var IdProductoSubTipo;
+    var IdProductoGrupo;
+    var IdProductoSubGrupo;
 
     this.ListarProductosTiposGrid = function (fnResult, fnError) {
         $.ajax({
@@ -249,13 +447,13 @@ function libProductosTipos() {
         });
     }
 
-    this.GuardarProductosTiposGrid = function () {
+    this.GuardarProductoTipo = function () {
         sparam = JSON.stringify(this);
 
         $.ajax({
-            type: "POST",
+            type: "GET",
             url: UrlWebGeneral + "ProductosTipos/GuardarProductosTiposGrid",
-            data: sparam,
+            data: { 'sparam': sparam },
             headers: { 'Authorization': 'Bearer ' + token },
             contentType: "application/json; charset=utf-8",
             dataType: "json",
@@ -264,13 +462,19 @@ function libProductosTipos() {
             complete: function () { },
             success: function (result) {
                 if (!result.bError) {
-                    CerrarWindow();
-                    CrearAlerta(result.Msg, "Exitoso", "success");
+                    var dialog = $("#kdWindow").data("kendoWindow");
+                    dialog.close();
+                    Swal.fire(
+                        'Registro Correcto!',
+                        'Se registró correctamente el tipo de producto!',
+                        'success'
+                    )
                     $('#kdGridTiposProductos').data('kendoGrid').dataSource.read();
                     $('#kdGridTiposProductos').data('kendoGrid').refresh();
                     $('#kdGridTiposProductos').data('kendoGrid').clearSelection();
                 } else {
-                    CerrarWindow();
+                    var dialog = $("#kdWindow").data("kendoWindow");
+                    dialog.close();
                     CrearAlerta(result.Msg, "Error", "alert");
                     $('#kdGridTiposProductos').data('kendoGrid').dataSource.read();
                     $('#kdGridTiposProductos').data('kendoGrid').refresh();
@@ -283,13 +487,13 @@ function libProductosTipos() {
         });
     }
 
-    this.ActualizarProductosTiposGrid = function () {
+    this.ActualizarProductoTipo = function () {
         sparam = JSON.stringify(this);
 
         $.ajax({
-            type: "POST",
+            type: "GET",
             url: UrlWebGeneral + "ProductosTipos/ActualizarProductosTiposGrid",
-            data: sparam,
+            data: { 'sparam': sparam },
             headers: { 'Authorization': 'Bearer ' + token },
             contentType: "application/json; charset=utf-8",
             dataType: "json",
@@ -298,13 +502,19 @@ function libProductosTipos() {
             complete: function () { },
             success: function (result) {
                 if (!result.bError) {
-                    CerrarWindow();
-                    CrearAlerta(result.Msg, "Exitoso", "success");
+                    var dialog = $("#kdWindow").data("kendoWindow");
+                    dialog.close();
+                    Swal.fire(
+                        'Actualización Correcta!',
+                        'Se actualizó correctamente el tipo de producto!',
+                        'success'
+                    )
                     $('#kdGridTiposProductos').data('kendoGrid').dataSource.read();
                     $('#kdGridTiposProductos').data('kendoGrid').refresh();
                     $('#kdGridTiposProductos').data('kendoGrid').clearSelection();
                 } else {
-                    CerrarWindow();
+                    var dialog = $("#kdWindow").data("kendoWindow");
+                    dialog.close();
                     CrearAlerta(result.Msg, "Error", "alert");
                     $('#kdGridTiposProductos').data('kendoGrid').dataSource.read();
                     $('#kdGridTiposProductos').data('kendoGrid').refresh();
@@ -317,13 +527,13 @@ function libProductosTipos() {
         });
     }
 
-    this.EliminarProductosTiposGrid = function () {
+    this.EliminarProductoTipo = function () {
         sparam = JSON.stringify(this);
 
         $.ajax({
-            type: "POST",
+            type: "GET",
             url: UrlWebGeneral + "ProductosTipos/EliminarProductosTiposGrid",
-            data: sparam,
+            data: { 'sparam': sparam },
             headers: { 'Authorization': 'Bearer ' + token },
             contentType: "application/json; charset=utf-8",
             dataType: "json",
@@ -332,7 +542,15 @@ function libProductosTipos() {
             complete: function () { },
             success: function (result) {
                 if (!result.bError) {
-                    CrearAlerta(result.Msg, "Exitoso", "success");
+
+                    var dialog = $("#kdWindow").data("kendoWindow");
+                    dialog.close();
+                    Swal.fire(
+                        'Eliminación Correcta!',
+                        'Se eliminó correctamente el tipo de producto!',
+                        'success'
+                    )
+
                     $('#kdGridTiposProductos').data('kendoGrid').dataSource.read();
                     $('#kdGridTiposProductos').data('kendoGrid').refresh();
                     $('#kdGridTiposProductos').data('kendoGrid').clearSelection();
@@ -348,4 +566,59 @@ function libProductosTipos() {
             }
         });
     }
+}
+
+
+
+function libProductosGrupos() {
+    var UrlWebGeneral = "http://localhost:44543/api/";
+    var token = sessionStorage.getItem('token');
+    var IdProductoGrupo;
+    var ProductoGrupo;
+    var Descripcion;
+
+
+    this.ListarProductosGruposCombo = function (fnResult, fnError) {
+        $.ajax({
+            type: "GET",
+            url: UrlWebGeneral + "ProductosGrupos/ListarProductosGruposCombo",
+            headers: { 'Authorization': 'Bearer ' + token },
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            async: true,
+            beforeSend: function () { },
+            complete: function () { },
+            success: function (result) {
+                if (!result.bError) {
+                    if (typeof fnResult !== 'undefined') {
+                        var fn = eval(fnResult);
+                        fn(result);
+                    }
+                } else {
+                    CrearAlerta(result.Msg, "Error", "error");
+
+                    if (typeof fnResult !== 'undefined') {
+                        var fn = eval(fnError);
+                        fn(result);
+                    }
+                }
+            },
+            error: function () {
+                CrearAlerta("¡Se genero un error de conectividad con el servidor!", "Error", "error");
+            }
+        });
+    }
+}
+
+
+//Limpiar Controles
+function LimpiarControles() {
+
+ 
+    $("#kdDdlProductoGrupo").data("kendoComboBox").select(-1);
+
+    $("#kdTxtProductoTipo").data("kendoTextBox").value("")
+    $("#kdDescripcion").data("kendoTextBox").value("")
+
+
 }

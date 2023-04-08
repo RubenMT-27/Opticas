@@ -23,9 +23,11 @@ function CrearGrid() {
         toolbar: [{
                 template: '<a id="EditarItemButton"">Editar</a>'
             },
-            {
-                template: '<span class="k-textbox k-grid-search k-display-flex form-right"><input autocomplete="off" placeholder="Buscar..." title="Buscar..." class="k-input form-control form-right"><span class="k-input-icon justify-content-end"><span class="k-icon k-i-search justify-content-end"></span></span></span>'
-            }],
+            "search"
+        ],
+        search: {
+            fields: ["IdEmpleado", "Nombre", "NivelUsuario","Sucursal"]
+        },
         resizable: true,
         height: 400,
         filterable: true,
@@ -71,7 +73,7 @@ function CrearGrid() {
     }).after(() => {
        
         $('#EditarItemButton').kendoButton({
-            icon: 'k-icon k-i-track-changes',
+            icon: 'k-icon k-i-pencil k-button-icon',
             click: onEditClick
         });
 

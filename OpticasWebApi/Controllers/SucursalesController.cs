@@ -49,5 +49,42 @@ namespace OpticasWebApi.Controllers
             }
             return oResult;
         }
+
+        [HttpGet]
+        [Route("GetListSucursalesComboTraspaso")]
+        public entResultListSucursales GetListSucursalesComboTraspaso([FromUri] string sparam)
+        {
+            entSucursales oDatos;
+            entResultListSucursales oResult = new entResultListSucursales();
+
+            oDatos = (new JavaScriptSerializer()).Deserialize<entSucursales>(sparam);
+
+            oResult.bError = true;
+            try
+            {
+                using (rnSucursales oSolicitudes = new rnSucursales())
+                {
+                    oSolicitudes.IdSucursal = oDatos.IdSucursal;
+                    oSolicitudes.ListarSucursalesComboTraspaso();
+
+                    if (!oSolicitudes.objError.bError)
+                    {
+                        oResult.ListMuestras = oSolicitudes.ListResult;
+                    }
+                    else
+                    {
+                        throw oSolicitudes.objError.uException;
+                    }
+                }
+                oResult.bError = false;
+            }
+            catch (Exception ex)
+            {
+                oResult.bError = true;
+                oResult.Msg = "¡Se genero un error interno al momento de obtener las notificaciones por sistema!";
+                oResult.Msg = ex.Message;
+            }
+            return oResult;
+        }
     }
 }

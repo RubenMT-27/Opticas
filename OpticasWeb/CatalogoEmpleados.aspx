@@ -4,6 +4,7 @@
     <link href="css/Kendo/Kendo-2023-R1/styles/kendo.common.min.css" rel="stylesheet" />
     <link href="css/Kendo/Kendo-2023-R1/styles/kendo.bootstrap-v4.min.css" rel="stylesheet" />
     <link href="css/cssCatalogoEmpleados.css" rel="stylesheet" />
+    <link href="css/cssGenerales.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="cphJs" runat="server">
 </asp:Content>
@@ -25,7 +26,7 @@
                    
                 </div>
 
-                <div class="panel-body p-t-10">
+               <div class="card-body p-t-10" style="height: 70vh;">
                     <div id="grdMisMuestras" class="kendoGrid"></div>
 
                     <div id="kdWindow" class="panel panel-info" data-sortable-id="index-1" style="display: none">

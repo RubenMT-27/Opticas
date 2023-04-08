@@ -50,7 +50,20 @@ namespace AnceSystem.libSucursales
             }
         }
 
-   }
+        public void ListarSucursalesComboTraspaso()
+        {
+            Bandera = "s2";
+            dt = Listar();
+
+            if (!objError.bError)
+            {
+                string jsonList;
+                jsonList = JsonConvert.SerializeObject(dt);
+                ListResult = JArray.Parse(jsonList);
+            }
+        }
+
+    }
 
 
 }

@@ -25,3 +25,23 @@
 #kdGridProductos {
     height: 100%;
 }
+
+#grdClientes {
+    height: 100%;
+}
+
+#grdMisMuestras {
+    height: 100%;
+}
+#kdGridProductosSalidas {
+    height: 100%;
+}
+#kdGridProductosEntradas {
+    height: 100%;
+}
+
+
+
+.swal2-container {
+    z-index: 20000 !important;
+}

@@ -1,5 +1,9 @@
-﻿using libProductos;
+﻿using AnceSystem.libProductos;
+using AnceSystem.libProductosCostos;
+using AnceSystem.libProductosExistencias;
+using libProductos;
 using libProductosTipos;
+using Opticas.libEmpleadosUsuarios;
 using OpticasWebApi.Models.Request;
 using OpticasWebApi.Models.Result;
 using System;
@@ -8,6 +12,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Web.Script.Serialization;
 
 namespace OpticasWebApi.Controllers
 {
@@ -48,33 +53,42 @@ namespace OpticasWebApi.Controllers
             return oResult;
         }
 
-        [HttpPost]
+
+        [HttpGet]
         [Route("GuardarProductosGrid")]
-        public ProductosResult GuardarProductosGrid(ProductosRequest oProductosRequest)
+        public ProductosResult GuardarProductosGrid([FromUri] string sparam)
         {
+            //entInventariosSolicitudes oDatos;
+            //entEmpleados eDatosSesion2;
             ProductosResult oResult = new ProductosResult();
-
+            entProductos eDatosSesion;
+            eDatosSesion = (new JavaScriptSerializer()).Deserialize<entProductos>(sparam);
+            entProductosCostos eDatosSesion2;
+            eDatosSesion2 = (new JavaScriptSerializer()).Deserialize<entProductosCostos>(sparam);
+            entProductosExistencias eDatosSesion3;
+            eDatosSesion3 = (new JavaScriptSerializer()).Deserialize<entProductosExistencias>(sparam);
             oResult.bError = true;
             try
             {
-                using (rnProductos oProductos = new rnProductos())
+                string sXMLDatos = "<XML><Datos PrecioCompra='"+ eDatosSesion2.PrecioCompra + "' PrecioVenta='" + eDatosSesion2.PrecioVenta + "' Cantidad='" + eDatosSesion3.Cantidad + "'/></XML>";
+               
+                using (rnProductos oSolicitudes = new rnProductos())
                 {
-                    oProductos.IdProductoTipo = oProductosRequest.IdProductoTipo;
-                    oProductos.IdProductoSubTipo = oProductosRequest.IdProductoSubTipo;
-                    oProductos.IdProductoGrupo = oProductosRequest.IdProductoGrupo;
-                    oProductos.IdProductoSubGrupo = oProductosRequest.IdProductoSubGrupo;
-                    oProductos.Producto = oProductosRequest.Producto;
-                    oProductos.Descripcion = oProductosRequest.Descripcion;
-                    oProductos.Marca = oProductosRequest.Marca;
-                    oProductos.GuardarProductosGrid();
+                    oSolicitudes.Modelo = eDatosSesion.Modelo;
+                    oSolicitudes.Marca = eDatosSesion.Marca;
+                    oSolicitudes.Descripcion = eDatosSesion.Descripcion;
+                    oSolicitudes.IdProductoGrupo = eDatosSesion.IdProductoGrupo;
+                    oSolicitudes.IdProductoTipo = eDatosSesion.IdProductoTipo;
+                    oSolicitudes.sXML = sXMLDatos;
+                    oSolicitudes.GuardarProductosGrid();
 
-                    if (!oProductos.objError.bError)
+                    if (!oSolicitudes.objError.bError)
                     {
-                        oResult.Msg = "¡Se ha guardado el nuevo Producto de forma correcta!";
+
                     }
                     else
                     {
-                        throw oProductos.objError.uException;
+                        throw oSolicitudes.objError.uException;
                     }
                 }
                 oResult.bError = false;
@@ -82,40 +96,49 @@ namespace OpticasWebApi.Controllers
             catch (Exception ex)
             {
                 oResult.bError = true;
-                oResult.Msg = "¡Se ha producido un error al guardar el Producto, favor de verificar!";
+                oResult.Msg = "¡Se genero un error interno al momento de guardar un nuevo empleado, favor de verificar!";
                 oResult.Msg = ex.Message;
             }
             return oResult;
         }
 
-        [HttpPost]
+        [HttpGet]
         [Route("ActualizarProductosGrid")]
-        public ProductosResult ActualizarProductosGrid(ProductosRequest oProductosRequest)
+        public ProductosResult ActualizarProductosGrid([FromUri] string sparam)
         {
+            //entInventariosSolicitudes oDatos;
+            //entEmpleados eDatosSesion2;
             ProductosResult oResult = new ProductosResult();
-
+            entProductos eDatosSesion;
+            eDatosSesion = (new JavaScriptSerializer()).Deserialize<entProductos>(sparam);
+            entProductosCostos eDatosSesion2;
+            eDatosSesion2 = (new JavaScriptSerializer()).Deserialize<entProductosCostos>(sparam);
+            entProductosExistencias eDatosSesion3;
+            eDatosSesion3 = (new JavaScriptSerializer()).Deserialize<entProductosExistencias>(sparam);
             oResult.bError = true;
             try
-            {
-                using (rnProductos oProductos = new rnProductos())
-                {
-                    oProductos.IdProducto = oProductosRequest.IdProducto;
-                    oProductos.IdProductoTipo = oProductosRequest.IdProductoTipo;
-                    oProductos.IdProductoSubTipo = oProductosRequest.IdProductoSubTipo;
-                    oProductos.IdProductoGrupo = oProductosRequest.IdProductoGrupo;
-                    oProductos.IdProductoSubGrupo = oProductosRequest.IdProductoSubGrupo;
-                    oProductos.Producto = oProductosRequest.Producto;
-                    oProductos.Descripcion = oProductosRequest.Descripcion;
-                    oProductos.Marca = oProductosRequest.Marca;
-                    oProductos.ActualizarProductosGrid();
 
-                    if (!oProductos.objError.bError)
+            { 
+                 string sXMLDatos = "<XML><Datos PrecioCompra='" + eDatosSesion2.PrecioCompra + "' PrecioVenta='" + eDatosSesion2.PrecioVenta + "' Cantidad='" + eDatosSesion3.Cantidad + "' IdProductoExistencia='" + eDatosSesion3.IdProductoExistencia + "'/></XML>";
+
+            using (rnProductos oSolicitudes = new rnProductos())
+                {
+                    oSolicitudes.Modelo = eDatosSesion.Modelo;
+                    oSolicitudes.Marca = eDatosSesion.Marca;
+                    oSolicitudes.Descripcion = eDatosSesion.Descripcion;
+                    oSolicitudes.IdProductoGrupo = eDatosSesion.IdProductoGrupo;
+                    oSolicitudes.IdProductoTipo = eDatosSesion.IdProductoTipo;
+                    oSolicitudes.sXML = sXMLDatos;
+                    oSolicitudes.IdProducto = eDatosSesion.IdProducto;
+                    oSolicitudes.ActualizarProductosGrid();
+
+                    if (!oSolicitudes.objError.bError)
                     {
-                        oResult.Msg = "¡Se ha actualizado el Producto de forma correcta!";
+
                     }
                     else
                     {
-                        throw oProductos.objError.uException;
+                        throw oSolicitudes.objError.uException;
                     }
                 }
                 oResult.bError = false;
@@ -123,29 +146,73 @@ namespace OpticasWebApi.Controllers
             catch (Exception ex)
             {
                 oResult.bError = true;
-                oResult.Msg = "¡Se ha producido un error al actualizar el Producto, favor de verificar!";
+                oResult.Msg = "¡Se genero un error interno al momento de guardar un nuevo empleado, favor de verificar!";
                 oResult.Msg = ex.Message;
             }
             return oResult;
         }
 
-        [HttpPost]
+        [HttpGet]
         [Route("EliminarProductosGrid")]
-        public ProductosResult EliminarProductosGrid(ProductosRequest oProductosRequest)
+        public ProductosResult EliminarProductosGrid([FromUri] string sparam)
         {
+            //entInventariosSolicitudes oDatos;
+            //entEmpleados eDatosSesion2;
             ProductosResult oResult = new ProductosResult();
-
+            entProductos eDatosSesion;
+            eDatosSesion = (new JavaScriptSerializer()).Deserialize<entProductos>(sparam);
+            //eDatosSesion2 = (new JavaScriptSerializer()).Deserialize<entEmpleados>(sparam);
+            //oDatos = (new JavaScriptSerializer()).Deserialize<entInventariosSolicitudes>(sparam);
             oResult.bError = true;
             try
             {
+                using (rnProductos oSolicitudes = new rnProductos())
+                {
+                    oSolicitudes.IdProducto = eDatosSesion.IdProducto;
+                    oSolicitudes.EliminarProductosGrid();
+
+                    if (!oSolicitudes.objError.bError)
+                    {
+
+                    }
+                    else
+                    {
+                        throw oSolicitudes.objError.uException;
+                    }
+                }
+                oResult.bError = false;
+            }
+            catch (Exception ex)
+            {
+                oResult.bError = true;
+                oResult.Msg = "¡Se genero un error interno al momento de eliminar un nuevo producto, favor de verificar!";
+                oResult.Msg = ex.Message;
+            }
+            return oResult;
+        }
+
+
+        [HttpGet]
+        [Route("ListarProductosTraspasosGrid")]
+        public ProductosResult ListarProductosTraspasosGrid([FromUri] string sparam)
+        {
+            ProductosResult oResult = new ProductosResult();
+          
+            entEmpleadosUsuarios eDatosSesion2;
+            eDatosSesion2 = (new JavaScriptSerializer()).Deserialize<entEmpleadosUsuarios>(sparam);
+            oResult.bError = true;
+            try
+            {
+                string sXMLDatos = "<XML><Datos EmpleadoUsuario='" + eDatosSesion2.EmpleadoUsuario +"'/></XML>";
+
                 using (rnProductos oProductos = new rnProductos())
                 {
-                    oProductos.IdProductoTipo = oProductosRequest.IdProductoTipo;
-                    oProductos.EliminarProductosGrid();
+                    oProductos.sXML = sXMLDatos;
+                    oProductos.ListarProductosTraspasosGrid();
 
                     if (!oProductos.objError.bError)
                     {
-                        oResult.Msg = "¡Se ha eliminado el Producto de forma correcta!";
+                        oResult.ListProductos = oProductos.ListResult;
                     }
                     else
                     {
@@ -157,12 +224,11 @@ namespace OpticasWebApi.Controllers
             catch (Exception ex)
             {
                 oResult.bError = true;
-                oResult.Msg = "¡Se ha producido un error al eliminar el Producto, favor de verificar!";
+                oResult.Msg = "¡Se genero un error interno al momento de obtener el listado de Productos!";
                 oResult.Msg = ex.Message;
             }
             return oResult;
         }
-
 
 
     }

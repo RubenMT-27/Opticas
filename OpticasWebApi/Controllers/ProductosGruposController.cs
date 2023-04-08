@@ -63,6 +63,7 @@ namespace OpticasWebApi.Controllers
 
                     if (!oProductosGrupos.objError.bError)
                     {
+                      
                         oResult.ListProductosGrupos = oProductosGrupos.ListResult;
                     }
                     else

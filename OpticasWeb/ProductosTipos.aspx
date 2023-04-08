@@ -25,13 +25,56 @@
 
                 <div class="card-body p-t-10" style="height: 70vh;">
                     <div id="kdGridTiposProductos">
-                        <div id="kdWindow">
+                           <div id="kdWindow" style="display: none">
+                        <div class="row justify-content-start align-items-center">
+                            <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10" id="dTxtProductoTipo">
+                                <input id="kdTxtProductoTipo" name="kdTxtProductoTipo" class="w-100" required validationmessage="Llenar Tipo de Producto" />
+                                <span class="k-invalid-msg" data-for="kdTxtProductoTipo"></span>
+                            </div>
                         </div>
+
+                        <div class="row justify-content-start align-items-center">
+                           
+
+                            <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
+                                <input id="kdDdlProductoGrupo" name="kdDdlProductoGrupo" class="w-100" required validationmessage="Seleccionar Grupo de Producto" />
+                                <span class="k-invalid-msg" data-for="kdDdlProductoGrupo"></span>
+                            </div>
+                            
+                        </div>
+
+
+                        <div class="row justify-content-start align-items-center">
+                           <div class="col-xs-11 col-sm-11 col-md-11 col-lg-11" id="dTxtDescripcion">
+                                <textarea id="kdDescripcion" class="w-100" required validationmessage="Llenar Descripcion"></textarea>
+                                <span class="k-invalid-msg" data-for="kdDescripcion"></span>
+                            </div>
+                        </div>
+
+                            
+                  
+
+                        <div class="row justify-content-center align-items-center pt-2 window-footer">
+                             <div class="col-xs-9 col-sm-7 col-md-3 col-lg-3">
+                                 <button id="kdBtnGuardar">Guardar</button>
+                            </div>
+                        </div>
+                        <div class="row justify-content-center align-items-center pt-2 window-footer">
+                             <div class="col-xs-9 col-sm-7 col-md-3 col-lg-3">
+                                 <button id="kdBtnActualizar">Actualizar</button>
+                            </div>
+                        </div>
+
+                    </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    
+    <div id="alert"></div>
+
+    <span id="popupNotification"></span>
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="cphScripts" runat="server">
     <script src="js/Kendo/Kendo-2023-R1/js/kendo.all.min.js"></script>
@@ -42,43 +85,5 @@
     <script src="js/jsProductosTipos.js"></script>
 
 
-    <script id="ControlesWindowTemplate" type="text/x-kendo-template">        
-        <input id="hidIdProductoTipo" type="hidden" />
-        <input id="txtProductoTipo" />
-        <textarea id="txtDescripcion"></textarea>
-        <div class="k-counter-container"><span class="k-counter-value">0</span>/300</div>
-
-        <div class="k-edit-buttons k-actions-end">
-        <button id="btnGuardar" type="button" class="k-button k-button-md k-rounded-md k-button-solid k-button-solid-primary">
-        <span class="k-icon k-i-check k-button-icon"></span>
-        <span class="k-button-text">Guardar</span>
-        </button>
-
-        <button id="btnCancelar" type="button" class="k-button k-button-md k-rounded-md k-button-solid k-button-solid-base">
-        <span class="k-icon k-i-cancel k-button-icon"></span>
-        <span class="k-button-text">Cancelar</span>
-        </button>
-        </div>
-    </script>
-
-    <script id="btnTemplates" type="text/x-kendo-template">
-        <button id="btnNuevo" TipoOperacion="1" type="button" class="k-button k-button-md k-rounded-md k-button-solid k-button-solid-base">
-        <span class="k-icon k-i-plus k-button-icon">
-        </span>
-        <span class="k-button-text">Nuevo</span>
-        </button>
-
-        <button id="btnEditar" TipoOperacion="2" type="button" class="k-button k-button-md k-rounded-md k-button-solid k-button-solid-base">
-        <span class="k-icon k-i-pencil k-button-icon">
-        </span>
-        <span class="k-button-text">Editar</span>
-        </button>
-
-        <button id="btnEliminar" type="button" class="k-button k-button-md k-rounded-md k-button-solid k-button-solid-base">
-        <span class="k-icon k-i-trash k-button-icon">
-        </span>
-        <span class="k-button-text">Eliminar</span>
-        </button>
-    </script>
 
 </asp:Content>

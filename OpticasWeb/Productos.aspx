@@ -10,28 +10,169 @@
 <asp:Content ID="Content3" ContentPlaceHolderID="cphPrincipal" runat="server">
     <h1 class="page-header p-1 text-white">Catálogo de Productos<small class="text-white"> Gran Visión</small></h1>
 
-    <div class="row row-space-30 justify-content-center">
-        <div class="col-lg-12 col-md-12">
-            <div class="card">
-                <div class="card-header bg-primary">
-                    <h6 class="card-title text-white">
-                        <span class="fa-stack fa-md">
-                            <i class="far fa-circle fa-stack-2x text-white"></i>
-                            <i class="fa fas fa-list-alt fa-stack-1x text-white"></i>
+
+
+     <div class="row row-space-30">
+        <div class="col-lg-12 ui-sortable">
+            <div class="panel panel-primary" data-sortable-id="index-1">
+                <div class="panel-heading ui-sortable-handle">
+                    <h4 class="panel-title">
+                        <span class="fa-stack fa-lg">
+                            <i class="far fa-circle fa-stack-2x"></i>
+                            <i class="fa fas fa-list-alt fa-stack-1x"></i>
                         </span>
+
                         Productos
-                    </h6>
+                    </h4>
+                 
                 </div>
 
                 <div class="card-body p-t-10" style="height: 70vh;">
-                    <div id="kdGridProductos">
-                        <div id="kdWindow">
+                    <div id="kdGridProductos" class="kendoGrid"></div>
+
+                  <div id="kdWindow" style="display: none">
+                        <div class="row justify-content-start align-items-center">
+                            <div class="col-xs-10 col-sm-10 col-md-5 col-lg-5" id="dTxtModelo">
+                                <input id="kdTxtModelo" name="kdTxtModelo" class="w-100" required validationmessage="Llenar Modelo" />
+                                <span class="k-invalid-msg" data-for="kdTxtModelo"></span>
+                            </div>
+
+                            <div class="col-xs-10 col-sm-10 col-md-5 col-lg-5" id="dTxtMarca">
+                                <input id="kdTxtMarca" name="kdTxtMarca" class="w-100" required validationmessage="Llenar Marca" />
+                                <span class="k-invalid-msg" data-for="kdTxtMarca"></span>
+                            </div>
+
                         </div>
+
+                        <div class="row justify-content-start align-items-center">
+                           
+
+                            <div class="col-xs-10 col-sm-10 col-md-5 col-lg-5">
+                                <input id="kdDdlProductoGrupo" name="kdDdlProductoGrupo" class="w-100" required validationmessage="Seleccionar Grupo de Producto" />
+                                <span class="k-invalid-msg" data-for="kdDdlProductoGrupo"></span>
+                            </div>
+                             <div class="col-xs-10 col-sm-10 col-md-5 col-lg-5">
+                                <input id="kdDdlProductoTipo" name="kdDdlProductoTipo" class="w-100" required validationmessage="Seleccionar Tipo de Producto" />
+                                <span class="k-invalid-msg" data-for="kdDdlProductoTipo"></span>
+                            </div>
+                        </div>
+
+
+                        <div class="row justify-content-start align-items-center">
+                           <div class="col-xs-11 col-sm-11 col-md-11 col-lg-11" id="dTxtDescripcion">
+                                <textarea id="kdDescripcion" class="w-100"></textarea>
+                            </div>
+                        </div>
+
+                                <div class="row justify-content-start align-items-center">
+                           
+
+                            <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
+                                <input id="kdDdlPrecioCompra" type="number" title="currency" min="0" max="10000" name="kdDdlPrecioCompra" class="w-100" required validationmessage="Ingresa el precio de Compra" />
+                                <span class="k-invalid-msg" data-for="kdDdlPrecioCompra"></span>
+                            </div>
+                             <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
+                                 <input id="kdDdlPrecioVenta" type="number" title="currency" min="0" max="10000" name="kdDdlPrecioVenta" class="w-100" required validationmessage="Ingresa el precio de Venta" />
+                                <span class="k-invalid-msg" data-for="kdDdlPrecioVenta"></span>
+                            </div>
+
+                                      <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
+                                           <input id="kdDdlCantidad" type="number" title="numeric"  min="1" max="10000" step="1" name="kdDdlCantidad" class="w-100" required validationmessage="Ingresar la cantidad"/>                                
+                                <span class="k-invalid-msg" data-for="kdDdlCantidad"></span>
+                            </div>
+                        </div>
+
+                  
+
+                        <div class="row justify-content-center align-items-center pt-2 window-footer">
+                             <div class="col-xs-9 col-sm-7 col-md-3 col-lg-3">
+                                 <button id="kdBtnGuardar">Guardar</button>
+                            </div>
+                        </div>
+                        <div class="row justify-content-center align-items-center pt-2 window-footer">
+                             <div class="col-xs-9 col-sm-7 col-md-3 col-lg-3">
+                                 <button id="kdBtnActualizar">Actualizar</button>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                      <div id="kdWindowTraspaso" style="display: none">
+
+
+                          
+                            <div class="row justify-content-center align-items-center">                         
+                            <div class="col-xs-10 col-sm-10 col-md-5 col-lg-5">
+                                <input id="kdTxtProductoGrupo2" name="kdTxtProductoGrupo2" class="w-100" style="background-color: #FAFAFA" readonly/>
+                            </div>
+                             <div class="col-xs-10 col-sm-10 col-md-5 col-lg-5">
+                                <input id="kdTxtProductoTipo2" name="kdTxtProductoTipo2" class="w-100" style="background-color: #FAFAFA" readonly/>
+                            </div>
+                        </div>
+
+                        <div class="row justify-content-center align-items-center">
+                              <div class="col-xs-10 col-sm-10 col-md-5 col-lg-5" id="dTxtMarca2">
+                                <input id="kdTxtMarca2" name="kdTxtMarca2" class="w-100" style="background-color: #FAFAFA" readonly/>
+                            </div>
+                            <div class="col-xs-10 col-sm-10 col-md-5 col-lg-5" id="dTxtModelo2">
+                                <input id="kdTxtModelo2" name="kdTxtModelo2" class="w-100" style="background-color: #FAFAFA" readonly/>
+                            </div>
+                        </div>
+                           <div>
+                              
+                        </div>
+
+
+                             <div class="row justify-content-center align-items-center">
+                            <div class="col-xs-10 col-sm-10 col-md-5 col-lg-5" id="dTxtSucursalOrigen">
+                                <input id="kdTxtSucursalOrigen" name="kdTxtSucursalOrigen" class="w-100" style="background-color: #FAFAFA" readonly/>
+                            </div>
+                             <div class="col-xs-10 col-sm-10 col-md-5 col-lg-5">
+                                <input id="kdDdlSucursalDestino" name="kdDdlSucursalDestino" class="w-100" required validationmessage="Seleccionar Sucursal" />
+                                <span class="k-invalid-msg" data-for="kdDdlSucursalDestino"></span>
+                            </div>
+                        </div>
+
+
+                        <div class="row justify-content-center align-items-center">
+                              <div class="col-xs-10 col-sm-10 col-md-5 col-lg-5" id="dTxtCantidadOrigen">
+                                <input id="kdTxtCantidadOrigen" name="kdTxtCantidadOrigen" class="w-100" style="background-color: #FAFAFA" readonly />
+                            </div>
+                             <div class="col-xs-6 col-sm-6 col-md-5 col-lg-5">
+                                           <input id="kdDdlCantidadDestino" type="number" title="numeric"  min="1" max="10000" step="1" name="kdDdlCantidad" class="w-100" required validationmessage="Ingresar la cantidad"/>                                
+                                <span class="k-invalid-msg" data-for="kdDdlCantidadDestino"></span>
+                            </div>
+                        </div>
+
+                              
+
+                        <div class="row justify-content-center align-items-center pt-2 window-footer">
+                             <div class="col-xs-9 col-sm-7 col-md-3 col-lg-3">
+                                 <button id="kdBtnAgregar">Agregar</button>
+                            </div>
+                        </div>
+                     
                     </div>
                 </div>
+
+                <div>
+                </div>
+
             </div>
         </div>
     </div>
+
+
+
+    <div id="confirm"></div>
+
+    <div id="alert"></div>
+
+    <span id="popupNotification"></span>
+
+
+   
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="cphScripts" runat="server">
     <script src="js/Kendo/Kendo-2023-R1/js/kendo.all.min.js"></script>
@@ -41,75 +182,5 @@
     <script src="js/plugins/jsZip/jszip.min.js"></script>
     <script src="js/jsProductos.js"></script>
 
-    <script id="ControlesWindowTemplate" type="text/x-kendo-template">        
-        <input id="hidIdProducto" type="hidden" />
 
- 
-            <div class="row">
-                <div class="col">
-                    <input id="txtProducto" />
-                </div>
-                <div class="col">
-                    <input id="txtMarca" />
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col">
-                    <textarea id="txtDescripcion"></textarea>
-                    <div class="k-counter-container"><span class="k-counter-value">0</span>/500</div>         
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col">
-                    <input id="dllProductoTipo" />
-                </div>
-                <div class="col">
-                    <input id="dllProductoSubTipo" />
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col">
-                    <input id="dllProductoGrupo" />
-                </div>
-                <div class="col">
-                    <input id="dllProductoSubGrupo" />
-                </div>
-            </div>
-
-        
-        <div class="k-edit-buttons k-actions-end">
-        <button id="btnGuardar" type="button" class="k-button k-button-md k-rounded-md k-button-solid k-button-solid-primary">
-        <span class="k-icon k-i-check k-button-icon"></span>
-        <span class="k-button-text">Guardar</span>
-        </button>
-
-        <button id="btnCancelar" type="button" class="k-button k-button-md k-rounded-md k-button-solid k-button-solid-base">
-        <span class="k-icon k-i-cancel k-button-icon"></span>
-        <span class="k-button-text">Cancelar</span>
-        </button>
-        </div>
-    </script>
-
-    <script id="btnTemplates" type="text/x-kendo-template">
-        <button id="btnNuevo" TipoOperacion="1" type="button" class="k-button k-button-md k-rounded-md k-button-solid k-button-solid-base">
-        <span class="k-icon k-i-plus k-button-icon">
-        </span>
-        <span class="k-button-text">Nuevo</span>
-        </button>
-
-        <button id="btnEditar" TipoOperacion="2" type="button" class="k-button k-button-md k-rounded-md k-button-solid k-button-solid-base">
-        <span class="k-icon k-i-pencil k-button-icon">
-        </span>
-        <span class="k-button-text">Editar</span>
-        </button>
-
-        <button id="btnEliminar" type="button" class="k-button k-button-md k-rounded-md k-button-solid k-button-solid-base">
-        <span class="k-icon k-i-trash k-button-icon">
-        </span>
-        <span class="k-button-text">Eliminar</span>
-        </button>
-    </script>
 </asp:Content>

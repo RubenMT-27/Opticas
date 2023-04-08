@@ -1,12 +1,10 @@
-﻿using libProductosTipos;
+﻿using AnceSystem.libProductosTipos;
+using libProductosTipos;
 using OpticasWebApi.Models.Request;
 using OpticasWebApi.Models.Result;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
 using System.Web.Http;
+using System.Web.Script.Serialization;
 
 namespace OpticasWebApi.Controllers
 {
@@ -49,15 +47,19 @@ namespace OpticasWebApi.Controllers
 
         [HttpGet]
         [Route("ListarProductosTiposCombo")]
-        public ProductosTiposResult ListarProductosTiposCombo()
+        public ProductosTiposResult ListarProductosTiposCombo([FromUri] string sparam)
         {
             ProductosTiposResult oResult = new ProductosTiposResult();
+
+            entProductosTipos eDatosSesion;
+            eDatosSesion = (new JavaScriptSerializer()).Deserialize<entProductosTipos>(sparam);
 
             oResult.bError = true;
             try
             {
                 using (rnProductosTipos oProductosTipos = new rnProductosTipos())
                 {
+                    oProductosTipos.IdProductoGrupo = eDatosSesion.IdProductoGrupo;
                     oProductosTipos.ListarProductosTiposCombo();
 
                     if (!oProductosTipos.objError.bError)
@@ -80,24 +82,26 @@ namespace OpticasWebApi.Controllers
             return oResult;
         }
 
-        [HttpPost]
+        [HttpGet]
         [Route("GuardarProductosTiposGrid")]
-        public ProductosTiposResult GuardarProductosTiposGrid(ProductosTiposRequest oProductosTiposRequest)
+        public ProductosTiposResult GuardarProductosTiposGrid([FromUri] string sparam)
         {
             ProductosTiposResult oResult = new ProductosTiposResult();
-
+            entProductosTipos eDatosSesion;
+            eDatosSesion = (new JavaScriptSerializer()).Deserialize<entProductosTipos>(sparam);
             oResult.bError = true;
             try
             {
                 using (rnProductosTipos oProductosTipos = new rnProductosTipos())
                 {
-                    oProductosTipos.ProductoTipo = oProductosTiposRequest.ProductoTipo;
-                    oProductosTipos.Descripcion = oProductosTiposRequest.Descripcion;
+                    oProductosTipos.IdProductoGrupo = eDatosSesion.IdProductoGrupo;
+                    oProductosTipos.ProductoTipo = eDatosSesion.ProductoTipo;
+                    oProductosTipos.Descripcion = eDatosSesion.Descripcion;
                     oProductosTipos.GuardarProductosTiposGrid();
 
                     if (!oProductosTipos.objError.bError)
                     {
-                        oResult.Msg = "¡Se ha guardado el nuevo Tipo de Producto de forma correcta!";
+                       
                     }
                     else
                     {
@@ -115,25 +119,27 @@ namespace OpticasWebApi.Controllers
             return oResult;
         }
 
-        [HttpPost]
+        [HttpGet]
         [Route("ActualizarProductosTiposGrid")]
-        public ProductosTiposResult ActualizarProductosTiposGrid(ProductosTiposRequest oProductosTiposRequest)
+        public ProductosTiposResult ActualizarProductosTiposGrid([FromUri] string sparam)
         {
             ProductosTiposResult oResult = new ProductosTiposResult();
-
+            entProductosTipos eDatosSesion;
+            eDatosSesion = (new JavaScriptSerializer()).Deserialize<entProductosTipos>(sparam);
             oResult.bError = true;
             try
             {
                 using (rnProductosTipos oProductosTipos = new rnProductosTipos())
                 {
-                    oProductosTipos.IdProductoTipo = oProductosTiposRequest.IdProductoTipo;
-                    oProductosTipos.ProductoTipo = oProductosTiposRequest.ProductoTipo;
-                    oProductosTipos.Descripcion = oProductosTiposRequest.Descripcion;
+                    oProductosTipos.IdProductoGrupo = eDatosSesion.IdProductoGrupo;
+                    oProductosTipos.IdProductoTipo = eDatosSesion.IdProductoTipo;
+                    oProductosTipos.ProductoTipo = eDatosSesion.ProductoTipo;
+                    oProductosTipos.Descripcion = eDatosSesion.Descripcion;
                     oProductosTipos.ActualizarProductosTiposGrid();
 
                     if (!oProductosTipos.objError.bError)
                     {
-                        oResult.Msg = "¡Se ha actualizado el Tipo de Producto de forma correcta!";
+                       
                     }
                     else
                     {
@@ -151,23 +157,23 @@ namespace OpticasWebApi.Controllers
             return oResult;
         }
 
-        [HttpPost]
+        [HttpGet]
         [Route("EliminarProductosTiposGrid")]
-        public ProductosTiposResult EliminarProductosTiposGrid(ProductosTiposRequest oProductosTiposRequest)
+        public ProductosTiposResult EliminarProductosTiposGrid([FromUri] string sparam)
         {
             ProductosTiposResult oResult = new ProductosTiposResult();
-
+            entProductosTipos eDatosSesion;
+            eDatosSesion = (new JavaScriptSerializer()).Deserialize<entProductosTipos>(sparam);
             oResult.bError = true;
             try
             {
                 using (rnProductosTipos oProductosTipos = new rnProductosTipos())
                 {
-                    oProductosTipos.IdProductoTipo = oProductosTiposRequest.IdProductoTipo;
+                    oProductosTipos.IdProductoTipo = eDatosSesion.IdProductoTipo;
                     oProductosTipos.EliminarProductosTiposGrid();
 
                     if (!oProductosTipos.objError.bError)
                     {
-                        oResult.Msg = "¡Se ha eliminado el Tipo de Producto de forma correcta!";
                     }
                     else
                     {

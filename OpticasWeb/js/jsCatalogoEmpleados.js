@@ -11,21 +11,21 @@ function CrearGrid() {
     var grdMisMuestras = $("#grdMisMuestras");
     grdMisMuestras.kendoGrid({
         scrollable: true,
-        sortable: true,
-       
+        sortable: true,     
         selectable: "multiple, row",
         pageable: true,
-        toolbar: ["excel", {
-        template: '<a id="newItemButton"">Nuevo</a>'
-        }, {
+        toolbar: [
+            {
+             template: '<a id="newItemButton"">Nuevo</a>'
+             },
+            {
             template: '<a id="EditarItemButton"">Editar</a>'
             },
             {
-                template: '<a id="EliminarItemButton"">Eliminar</a>'
+             template: '<a id="EliminarItemButton"">Eliminar</a>'
             },
-            {
-                template: '<span class="k-textbox k-grid-search k-display-flex form-right"><input autocomplete="off" placeholder="Buscar..." title="Buscar..." class="k-input form-control form-right"><span class="k-input-icon justify-content-end"><span class="k-icon k-i-search justify-content-end"></span></span></span>'
-            }        ],
+            "excel", "search"
+        ],
 
 
         excel: {
@@ -33,11 +33,10 @@ function CrearGrid() {
             allPages: true,
             filterable: true
         },
+        search: {
+            fields: ["IdEmpleado", "Nombre", "ApellidoPaterno", "ApellidoMaterno", "NumeroTelefono", "CorreoElectronico","Sucursal","Puesto","Genero"]
+        },
         resizable: true,
-        height: 400,
-        //dataBound: function (e) {
-        //    $("[data-toggle='tooltip']").tooltip();
-        //},
         filterable: true,
         columns: [
             {
@@ -134,16 +133,16 @@ function CrearGrid() {
 
     }).after(() => {
         $('#newItemButton').kendoButton({
-            icon: 'k-icon k-i-plus',
+            icon: 'k-icon k-i-plus k-button-icon',
             click: onNewClick
         });
         $('#EditarItemButton').kendoButton({
-            icon: 'k-icon k-i-track-changes',
+            icon: 'k-icon k-i-pencil k-button-icon',
             click: onEditClick
         });
 
         $('#EliminarItemButton').kendoButton({
-            icon: 'k-icon k-i-x-outline',
+            icon: 'k-icon k-i-trash k-button-icon',
             click: onEliminarClick
         });
     });

@@ -8,6 +8,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using AnceSystem.libProductos;
 
 namespace libProductos
 {
@@ -24,6 +25,21 @@ namespace libProductos
         public void ListarProductosGrid()
         {
             Bandera = "s1";
+            dt = Listar();
+
+            if (!objError.bError)
+            {
+                string jsonList;
+                jsonList = JsonConvert.SerializeObject(dt);
+                ListResult = JArray.Parse(jsonList);
+            }
+        }
+
+        
+
+               public void ListarProductosTraspasosGrid()
+        {
+            Bandera = "s2";
             dt = Listar();
 
             if (!objError.bError)

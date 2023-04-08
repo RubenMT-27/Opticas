@@ -1,0 +1,10 @@
+C:\Sistemas\Optica_GIT\6\Opticas\Librerias\libEmpleadosRepartidores\bin\Debug\libEmpleadosRepartidores.dll
+C:\Sistemas\Optica_GIT\6\Opticas\Librerias\libEmpleadosRepartidores\bin\Debug\libEmpleadosRepartidores.pdb
+C:\Sistemas\Optica_GIT\6\Opticas\Librerias\libEmpleadosRepartidores\bin\Debug\Conexion.dll
+C:\Sistemas\Optica_GIT\6\Opticas\Librerias\libEmpleadosRepartidores\bin\Debug\Newtonsoft.Json.dll
+C:\Sistemas\Optica_GIT\6\Opticas\Librerias\libEmpleadosRepartidores\bin\Debug\Newtonsoft.Json.xml
+C:\Sistemas\Optica_GIT\6\Opticas\Librerias\libEmpleadosRepartidores\obj\Debug\libEmpleadosRepartidores.csproj.AssemblyReference.cache
+C:\Sistemas\Optica_GIT\6\Opticas\Librerias\libEmpleadosRepartidores\obj\Debug\libEmpleadosRepartidores.csproj.CoreCompileInputs.cache
+C:\Sistemas\Optica_GIT\6\Opticas\Librerias\libEmpleadosRepartidores\obj\Debug\libEmpleadosRepartidores.csproj.CopyComplete
+C:\Sistemas\Optica_GIT\6\Opticas\Librerias\libEmpleadosRepartidores\obj\Debug\libEmpleadosRepartidores.dll
+C:\Sistemas\Optica_GIT\6\Opticas\Librerias\libEmpleadosRepartidores\obj\Debug\libEmpleadosRepartidores.pdb

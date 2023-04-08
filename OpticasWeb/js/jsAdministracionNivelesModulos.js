@@ -7,7 +7,7 @@ $(document).ready(function () {
         CrearGrid();
         CrearDataGrid();
         
-    }, 1000);
+    }, 2000);
    
 });
 
@@ -49,9 +49,11 @@ function CrearGrid() {
             {
                 template: '<a id="EliminarItemButton"">Eliminar</a>'
             },
-            {
-                template: '<span class="k-textbox k-grid-search k-display-flex form-right"><input autocomplete="off" placeholder="Buscar..." title="Buscar..." class="k-input form-control form-right"><span class="k-input-icon justify-content-end"><span class="k-icon k-i-search justify-content-end"></span></span></span>'
-            }],
+            "search"
+        ],
+        search: {
+            fields: ["NombreModulo", "ModuloTipo","NivelUsuario"]
+        },
         resizable: true,
         height: 400,
         filterable: true,
@@ -89,12 +91,12 @@ function CrearGrid() {
     }).after(() => {
        
         $('#AgregarItemButton').kendoButton({
-            icon: 'k-icon k-i-track-changes',
+            icon: 'k-icon k-i-plus k-button-icon',
             click: ValidarControlesAgregar
         });
 
         $('#EliminarItemButton').kendoButton({
-            icon: 'k-icon k-i-track-changes',
+            icon: 'k-icon k-i-trash k-button-icon',
             click: ValidarControlesEliminar
         });
        
@@ -586,6 +588,41 @@ function libNivelesModulos() {
             }
         });
     }
+}
+
+
+function bsMsgBox(sMensaje, sTitulo, Icono) {
+    var Icono;
+    var htmlIcono;
+    var typeswal;
+
+    switch (Icono) {
+        case "Warning":
+            htmlIcono = '<img src="Imagenes/Formularios/Alert32.png" class="IconMsg" />'
+            typeswal = "warning"
+            break;
+        case "Info":
+            htmlIcono = '<img src="Imagenes/Formularios/Info32.png" class="IconMsg" />'
+            typeswal = "info"
+            break;
+        case "Error":
+            htmlIcono = '<img src="Imagenes/Formularios/Error32.png" class="IconMsg" />'
+            typeswal = "error"
+            break;
+        case "Question":
+            htmlIcono = '<img src="Imagenes/Formularios/Question32.png" class="IconMsg" />'
+            typeswal = "info"
+            break;
+        default:
+            htmlIcono = ''
+    }
+
+
+
+
+
+
+
 }
 
 
